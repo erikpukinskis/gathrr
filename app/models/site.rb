@@ -14,10 +14,15 @@ class Site < ActiveRecord::Base
   end
 
   def create_feeds(feed_string)
-      
+    urls = feed_string.split("\n")
+    urls.each {|url| feeds << Feed.new(:url => url) }
   end
 
   def after_create
     self.feed_list = @feed_string if @feed_string
+  end
+
+  def refresh
+    feeds.each {|feed| feed.refresh}
   end
 end
