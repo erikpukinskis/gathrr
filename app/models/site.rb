@@ -15,8 +15,16 @@ class Site < ActiveRecord::Base
   end
 
   def create_feeds(feed_string)
-    urls = feed_string.split("\n")
-    urls.each {|url| feeds << Feed.new(:url => url) }
+    identifiers = feed_string.split("\n")
+    identifiers.each do |id|  
+      if id.first == '@'
+        without_at = id[1,id.length]
+        params = {:twitter_username => without_at.strip}
+      else 
+        params = {:url => id}
+      end
+      feeds << Feed.new(params)
+    end
   end
 
   def after_create

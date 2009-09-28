@@ -11,4 +11,9 @@ describe Feed do
     feed = Feed.new(:url => "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss  ")
     feed.url.should == "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"
   end
+
+  it "should convert twitter @name to a feed" do
+    feed = Feed.new(:twitter_username => "whoever")
+    feed.url.should == "http://twitter.com/statuses/user_timeline/whoever.rss"
+  endna
 end

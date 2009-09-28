@@ -9,3 +9,11 @@ Feature: Creating Sites
       And I fill in "feeds" with " http://bunchuptest.wordpress.com/feed/ "
       And I press "Bunch 'em"
     Then I should see "surprise ending"
+
+  Scenario: With a twitter feed
+    When I am on the homepage
+      And I fill in "url" with "zood"
+      And I fill in "feeds" with "@bunchuptest"
+      And I press "Bunch 'em"
+    Then I should see "bunchup punchup"
+
