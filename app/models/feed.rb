@@ -12,6 +12,10 @@ class Feed < ActiveRecord::Base
   belongs_to :site
   has_many :entries
 
+  def url=(url)
+    super(url.strip)
+  end
+
   def refresh
     content = "" # raw content of rss feed will be loaded here
     open(url) {|s| content = s.read }

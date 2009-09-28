@@ -6,4 +6,9 @@ describe Feed do
     feed.refresh
     feed.entries[0].description.should match(/^Bunchup is going to be so much fun!/)
   end
+
+  it "should strip spaces off the url" do
+    feed = Feed.new(:url => "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss  ")
+    feed.url.should == "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"
+  end
 end

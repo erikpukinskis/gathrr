@@ -1,6 +1,4 @@
-<h1><%=h @site.slug %></h1>
+<% content_for :title do %><%= @site.slug %><% end %>
 
 <%= render :partial => "entries/entry", :collection => @site.entries %>
 
-
-<%= link_to 'Edit', edit_site_path(@site) %> |

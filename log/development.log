@@ -3859,3 +3859,1752 @@ Completed in 80ms (View: 53, DB: 3) | 200 OK [http://localhost/sites/1]
   [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
   [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
   [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 22:33:43) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 26ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 22:33:51) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "authenticity_token"=>"yPr6898S4w89nAHT4HzF5DXhpg2xQj1zzN0eb+orBo4=", "site"=>{"feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss", "slug"=>"mememe"}}
+  [4;35;1mSite Create (320.7ms)[0m   [0mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('mememe', '2009-09-28 05:33:51', '2009-09-28 05:33:51')[0m
+  [4;36;1mFeed Create (0.5ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 05:33:52', '2009-09-28 05:33:52', 'http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss', 2)[0m
+  [4;35;1mFeed Load (1.7ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds".site_id = 2) [0m
+  [4;36;1mEntry Create (177.0ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 05:33:52', NULL, '2009-09-28 05:33:52', NULL, 2, NULL, 'Bunchup is going to be so much fun!<div class="blogger-post-footer"><img width=''1'' height=''1'' src=''https://blogger.googleusercontent.com/tracker/1024195122064298862-3416627683173458388?l=bunchuptest.blogspot.com''/></div>')[0m
+Redirected to http://localhost:3000/sites/2
+Completed in 1164ms (DB: 500) | 302 Found [http://localhost/sites]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:33:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.7ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;36;1mEntry Load (0.7ms)[0m   [0;1mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 75ms (View: 50, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#edit (for 127.0.0.1 at 2009-09-27 22:33:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.4ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 29ms (View: 11, DB: 0) | 200 OK [http://localhost/sites/2/edit]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:37:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 56ms (View: 39, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:37:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (1.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 79ms (View: 53, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:43:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.8ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (1.2ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.3ms)
+Completed in 337ms (View: 289, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:43:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 81ms (View: 55, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:44:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (19.4ms)
+Completed in 915ms (View: 815, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:44:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 74ms (View: 45, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:44:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 55ms (View: 35, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:44:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 105ms (View: 82, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:44:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 59ms (View: 41, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:45:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { "hi" } ; @output_buffer.conca...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...;  content_for :title { "hi" } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :title { "hi" } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { "hi" } ; @output_buffer.conca...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...;  content_for :title { "hi" } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title { "hi" } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (183.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:45:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.6ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { "hi" } ; @output_buffer.conca...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...;  content_for :title { "hi" } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :title { "hi" } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { "hi" } ; @output_buffer.conca...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...;  content_for :title { "hi" } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title { "hi" } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:45:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 57ms (View: 37, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:45:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.4ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 156ms (View: 32, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:45:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 73ms (View: 41, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:47:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.4ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.8ms)
+Completed in 400ms (View: 375, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:48:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+
+ActionView::TemplateError (undefined method `sluf' for #<Site:0xb7255fa0>) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title do %><%= @site.sluf %><% end %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:1
+    app/views/sites/show.html.erb:1
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:48:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.4ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+
+ActionView::TemplateError (undefined method `sluf' for #<Site:0xb6f36e78>) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title do %><%= @site.sluf %><% end %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:1
+    app/views/sites/show.html.erb:1
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (186.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:48:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 41ms (View: 29, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 77ms (View: 57, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (1.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.3ms)
+Completed in 63ms (View: 43, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...tent_for :title { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :title { @site.slug } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...tent_for :title { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title { @site.slug } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (167.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.8ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...tent_for :title { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :title { @site.slug } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting kEND
+...e=true ;  content_for :title { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...tent_for :title { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for :title { @site.slug } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting ')'
+...=true ;  content_for(:title0 { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...ent_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting ')'
+...=true ;  content_for(:title0 { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...ent_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for(:title0 { @site.slug } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (163.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSite Load (0.6ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+ERROR: compiling _run_erb_app47views47sites47show46html46erb RAISED compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting ')'
+...=true ;  content_for(:title0 { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...ent_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^
+Function body:           def _run_erb_app47views47sites47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n<h1>"
+
+; @output_buffer.concat((h @site.slug ).to_s); @output_buffer.concat "</h1>\n\n"
+
+; @output_buffer.concat(( render :partial => "entries/entry", :collection => @site.entries ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_site_path(@site) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/erik/projects/bunchup/app/views/sites/show.html.erb:12:in `compile!'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/erik/projects/bunchup/app/controllers/sites_controller.rb:18:in `show'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/erik/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/home/erik/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/home/erik/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+/usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+/usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+/home/erik/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/home/erik/.gem/ruby/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '{', expecting ')'
+...=true ;  content_for(:title0 { @site.slug } ; @output_buffer...
+                              ^
+/home/erik/projects/bunchup/app/views/sites/show.html.erb:1: syntax error, unexpected '}', expecting kEND
+...ent_for(:title0 { @site.slug } ; @output_buffer.concat "\n\n...
+                              ^) on line #1 of app/views/sites/show.html.erb:
+1: <% content_for(:title0 { @site.slug } %>
+2: 
+3: <h1><%=h @site.slug %></h1>
+4: 
+
+    app/views/sites/show.html.erb:12:in `compile!'
+    app/controllers/sites_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (73.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.4ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 44ms (View: 32, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 69ms (View: 50, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (1.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 226ms (View: 67, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:49:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 63ms (View: 41, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:50:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 59ms (View: 39, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:50:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (1.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 47ms (View: 29, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:51:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 72ms (View: 47, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-27 22:51:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:52:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (1.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 42ms (View: 28, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:54:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.0ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 190ms (View: 163, DB: 9) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:55:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 59ms (View: 47, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:55:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 50ms (View: 30, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:55:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 81ms (View: 52, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:55:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.1ms)
+Completed in 187ms (View: 35, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:55:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.8ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 62ms (View: 41, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:56:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:56:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (1.2ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.2ms)
+Completed in 73ms (View: 53, DB: 2) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 22:56:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 2) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (0.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 2)) [0m
+Rendered entries/_entry (0.6ms)
+Completed in 103ms (View: 84, DB: 1) | 200 OK [http://localhost/sites/2]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 23:05:33) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 40ms (View: 23, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 23:05:56) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "authenticity_token"=>"yPr6898S4w89nAHT4HzF5DXhpg2xQj1zzN0eb+orBo4=", "site"=>{"feed_list"=>"http://snowedin.net/blog/feed/\r\nhttp://josh.ev9.org/weblog/feed/\r\nhttp://eniac.hopto.org/~whazlewo/blog/index.xml\r\nhttp://www.scwn.net/http://www.scwn.net/wp-rss2.php", "slug"=>"informatics"}}
+  [4;36;1mSite Create (73.1ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('informatics', '2009-09-28 06:05:56', '2009-09-28 06:05:56')[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:05:56', '2009-09-28 06:05:56', 'http://snowedin.net/blog/feed/', 3)[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:05:56', '2009-09-28 06:05:56', 'http://josh.ev9.org/weblog/feed/', 3)[0m
+  [4;35;1mFeed Create (0.1ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:05:56', '2009-09-28 06:05:56', 'http://eniac.hopto.org/~whazlewo/blog/index.xml', 3)[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:05:56', '2009-09-28 06:05:56', 'http://www.scwn.net/http://www.scwn.net/wp-rss2.php', 3)[0m
+  [4;35;1mFeed Load (0.8ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds".site_id = 3) [0m
+
+URI::InvalidURIError (bad URI(is not URI?): http://snowedin.net/blog/feed/):
+  /usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  /usr/lib/ruby/1.8/open-uri.rb:29:in `open'
+  app/models/feed.rb:17:in `refresh'
+  app/models/site.rb:27:in `refresh'
+  app/models/site.rb:27:in `refresh'
+  app/controllers/sites_controller.rb:47:in `create'
+  app/controllers/sites_controller.rb:45:in `create'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (60.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 23:06:15) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "authenticity_token"=>"yPr6898S4w89nAHT4HzF5DXhpg2xQj1zzN0eb+orBo4=", "site"=>{"feed_list"=>"http://snowedin.net/blog/feed\r\nhttp://josh.ev9.org/weblog/feed\r\nhttp://eniac.hopto.org/~whazlewo/blog/index.xml\r\nhttp://www.scwn.net/http://www.scwn.net/wp-rss2.php", "slug"=>"informatics"}}
+  [4;36;1mSite Create (0.4ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('informatics', '2009-09-28 06:06:15', '2009-09-28 06:06:15')[0m
+  [4;35;1mFeed Create (0.3ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:06:15', '2009-09-28 06:06:15', 'http://snowedin.net/blog/feed', 4)[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:06:15', '2009-09-28 06:06:15', 'http://josh.ev9.org/weblog/feed', 4)[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:06:15', '2009-09-28 06:06:15', 'http://eniac.hopto.org/~whazlewo/blog/index.xml', 4)[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:06:15', '2009-09-28 06:06:15', 'http://www.scwn.net/http://www.scwn.net/wp-rss2.php', 4)[0m
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds".site_id = 4) [0m
+
+URI::InvalidURIError (bad URI(is not URI?): http://snowedin.net/blog/feed):
+  /usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  /usr/lib/ruby/1.8/open-uri.rb:29:in `open'
+  app/models/feed.rb:17:in `refresh'
+  app/models/site.rb:27:in `refresh'
+  app/models/site.rb:27:in `refresh'
+  app/controllers/sites_controller.rb:47:in `create'
+  app/controllers/sites_controller.rb:45:in `create'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (55.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (20.4ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (489.8ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (11.1ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (12.6ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (64.3ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (17.3ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (31.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 23:10:59) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "authenticity_token"=>"yPr6898S4w89nAHT4HzF5DXhpg2xQj1zzN0eb+orBo4=", "site"=>{"feed_list"=>"http://snowedin.net/blog/feed\r\nhttp://josh.ev9.org/weblog/feed\r\nhttp://eniac.hopto.org/~whazlewo/blog/index.xml\r\nhttp://www.scwn.net/http://www.scwn.net/wp-rss2.php", "slug"=>"informatics"}}
+  [4;36;1mSite Create (0.3ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('informatics', '2009-09-28 06:10:59', '2009-09-28 06:10:59')[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:10:59', '2009-09-28 06:10:59', 'http://snowedin.net/blog/feed', 5)[0m
+  [4;36;1mFeed Create (0.7ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:10:59', '2009-09-28 06:10:59', 'http://josh.ev9.org/weblog/feed', 5)[0m
+  [4;35;1mFeed Create (0.1ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:10:59', '2009-09-28 06:10:59', 'http://eniac.hopto.org/~whazlewo/blog/index.xml', 5)[0m
+  [4;36;1mFeed Create (0.1ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 06:10:59', '2009-09-28 06:10:59', 'http://www.scwn.net/http://www.scwn.net/wp-rss2.php', 5)[0m
+  [4;35;1mFeed Load (0.8ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds".site_id = 5) [0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'On Facebook I posed a question about racism, and got some extensive, if tangential at times, responses.  I wanted to respond to them here, because Facebook comments aren&#8217;t the best for long form stuff.  Their words in italics.  Identities removed to protect the innocent, but authors feel free to claim credit in comments.
+My original note:
+Thinking [...]')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, '
+Eat meat and dairy. Seriously. Now I mean no disrespect against people who can go 100%, cold-turkey, animal product free.  But there are some big risks with that approach:
+
+Rules and Regulations Burnout, where you get so tired of all the work that you give up and go back to eating whatever the heck you feel [...]')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'Every now and then someone asks me some variation of the question: &#8220;How do I get a web site?&#8221; It&#8217;s a question I enjoy answering, because the web is always changing, and as time goes on you can do more and more with less and less money and expertise.
+My friend Sumitra today told me [...]')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'soaring through nature&#8217;s finest show.
+Denali, the great one, soaring under the midnight sun.
+And then the extremes. In the winter time
+it&#8217;s the frozen road
+that is competing
+with the view of ice fogged frigid beauty,
+the cold though, doesn&#8217;t it split
+the Cheechakos from the Sourdoughs?
+And then in the summertime such extreme
+summertime
+about a hundred and fifty degrees hotter
+than just [...]')[0m
+  [4;36;1mEntry Create (0.6ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'I just watched a fun interview with some of the folks from Heroku. The interviewer at one point casually gendered all Heroku users as &#8220;he&#8221;. These things stick out to me these days. It makes me think about how it must feel to be a woman and constantly be reminded that few [...]')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'Had a very productive week. SproutRobot is coming along great. We did our first bit of usability testing today, which felt just fantastic. We got a lot of good info about what needs fixing, but I think we also got a glimpse of how great this product will be. Very excited.
+A [...]')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'So, another tech conference presenter has taken it upon himself to include a pornified image of a woman in a talk. Fighting ensued.
+Hoss, the dude who gave the talk, says:
+&#8220;I would like to point out that, at the time of writing this, I have received considerably more positive feedback on my Flashbelt presentation than [...]')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'Listen to it here, or download the whole thing!
+')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'Here&#8217;s a preview!
+ 
+mp3
+')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:01', NULL, '2009-09-28 06:11:01', NULL, 11, NULL, 'I am so excited about the Open Source Bridge conference!  Here&#8217;s the first bits of their introduction:
+
+
+Open Source Citizenship
+What are the rights and responsibilities of an open source citizen? We’re exploring what open source means to us, what it offers, where we struggle, and why we do this day in and day out, even when [...]')[0m
+  [4;36;1mEntry Create (0.6ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'I seem to be posting there a lot more frequently than I am on the blog. Here are my latest thoughts: 
+
+
+
+
+new TWTR.Widget({
+ profile: true,
+ id: ''twtr-profile-widget'',
+ loop: true,
+ width: 500,
+ height: 300,
+ theme: {
+ shell: {
+ background: ''#333333'',
+ [...]')[0m
+  [4;35;1mEntry Create (0.5ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'This weekend as Israelis and Palestinians clashed again in Gaza, and it seemed like everyone had a reaction to the violence.
+As I consumed the popular media, I began to think about the more pedestrian views out there. It is important to understand what the everyman thinks, even if one does not agree with him or [...]')[0m
+  [4;36;1mEntry Create (0.6ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'I spent nearly an hour this afternoon digging my car out from a pile of snow and slippery ice. I had done the same thing yesterday, though it was less ice and much more snow. Winter in a cold climate tests one&#8217;s will to commune. All those hours holed up indoors means that you&#8217;re not [...]')[0m
+  [4;35;1mEntry Create (0.5ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, '
+And all you people are the heroes I’ve known
+We’re staring off the edge into the unknown
+We are not there yet, but we cannot go home
+So we cry and we sing
+Yeah I remember everything
+How for once in our lives
+We saw what we wanted and took a bite.
+We picked the fruit from the tree, and it was [...]')[0m
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'So the big news on the internets today is Google&#8217;s new browser: Chrome. It&#8217;s only available for Windows as of today, and since I&#8217;m on a Mac I haven&#8217;t been able to play with it yet. But that&#8217;s ok, because Google hasn&#8217;t completely left me out of the loop. I have access to the comic [...]')[0m
+  [4;35;1mEntry Create (0.5ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, '
+What if we could travel 5 miles in less than 5 minutes?
+What if we could watch movies in our own homes?
+What if we could buy things for a whole day without using any paper money?
+What if we could communicate with friends on the other side of the world without leaving the house?
+
+I hope you noticed [...]')[0m
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'Study: Most Children Strongly Opposed To Children&#8217;s Healthcare
+Thanks, The Onion. Happy Monday everybody.
+')[0m
+  [4;35;1mEntry Create (0.5ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'Jono DiCarlo at Mozilla Labs documented his feelings about user interface design in a great post titled These Things I Believe. While I do not agree with him across the board, he does make some interesting points, and helps guide software developers toward the (great user experience) light. I&#8217;ll call out a few of his [...]')[0m
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, 'Adaptive Path&#8217;s Kumi Akiyoshi blogged a quick piece about the visual design of Aurora. I really love the exploratory designs that were created before deciding on the one we saw in the videos. I don&#8217;t necessarily love all of the features within them, but it is so important to create multiple design options before settling [...]')[0m
+  [4;35;1mEntry Create (0.6ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 12, NULL, '
+As your local Interaction Design opinion one-stop-shop, I feel obliged to weigh in on Aurora, Adaptive Path&#8217;s newest concept series in collaboration with Mozilla Labs. First off, if you haven&#8217;t watched the videos they&#8217;ve published so far, do that first:
+Aurora (Part 1) from Adaptive Path on Vimeo.
+Aurora (Part 2) from Adaptive Path on Vimeo.
+Aurora (Part [...]')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I borrowed a digital camera from the tech support guys, and found the photo below. I can only imagine what is going on in this conversation. So I propose the 1st Informatics Caption Contest (Faculty Edition). Just submit your caption...')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I''m working on a physical prototype that requires a device that I can send power to, and have it make a sort of punching motion. Luckily for me there is just such a device. It is called a linear actuator,...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'CHI Workshop paper :: Ambient persuasionGettting&nbsp; very close, I don''t think I''ll have a hard time getting this submitted by Wednesday. Once Kevin gets his revision to me I''ll send it out the door. I should have sent a copy...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'Current Primary Tasks Ambient Orb Study PaperLiving Lab SpecificationsSoundWall PrototypeFind out how many classes I still need to take 1) Ambient Orb Study PaperI''ve worked a bit more on how to restructure the paper, and I''ve been editing the orginal...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'Current Primary Tasks Ambient Orb Study Paper Living Lab Specifications SoundWall Prototype Find out how many classes I still need to take 1) Ambient Orb Study Paper After discussing the paper with Kay last week I''ve got a good idea...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I''ve been talking to all the people I can find from the Mitsubishi Electronics Research Lab in a mad attempt to talk them into giving us a DiamondTouch table.&nbsp; We used to have one but Yvonne took it to the...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'In many ways, this has been one of the most painful semesters to date. Usually, the beginning of the semester is chaotic, you have new classes, new meetings, new due dates, and new deadlines. However, usually you make it through...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'At CHI last year I was complaining to the Student Volunteer Chair about how much I hated the way SV''s had to schedule their tasks. Each student is expected to work at least 20 hours to justify their free hotel...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I added the macro code to my rss feed, lets see if it shows up in planet info Long live Techno!...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, ' There is an act that everyone does, but no one will admit it. I think its time that people just accept it as a natural act of human curiosity. I''m sure you''ve all guessed that I''m referring to the...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I am working on a study that asks participants to figure out how to use a device that offers no affordances or clues as to what it actually does, and looks nothing like what it actually is. The device I...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'A professor here at IU named Gregory Rawlins wrote an interesting book called “Moths to the Flame: The Seductions of Computer Technology.” The book is interesting because Rawlins is a futurist who does a very thorough job of taking into...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'It may seem like a silly inquiry, but I''ve been doing some researching to find full definitions of Pervasive Computing, Ubiquitous Computing, and Ambient Intelligence in order to understand the difference between the three. It seems to me that people...')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'I''ve been kicking around the idea of implementing some sort of awareness system for our lovely tower of power over here at Eigenmann. After talking to Yvonne and seeing Paul Dourish''s talk on Place and Space, I think it would...')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:03', NULL, '2009-09-28 06:11:03', NULL, 13, NULL, 'So over the past few weeks, I''ve been thinking more and more about "Ambient Intelligence." Specifically Ambient Display Devices. I had thought that the domain had already been viewed and discarded by the side of the road, however since I''ve...')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, '
+Paul and I have just launched a new blog:
+http://visualizingmusic.com/
+from the about page:
+As the world of online music grows, tools for helping people find new and interesting music in these extremely large collections become increasingly important. In this blog we survey the state-of-the-art in visualization for music discovery in commercial and research systems.
+Paul and I wanted [...]')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'Update: This tool is now available on cran.
+Researchers in academia and the industry consistently use visualizations to better understand their data.  The standard two dimension scatter-plot is a staple of many exploratory data analyses.  However, there are many cases where two dimensions are not enough. For instance in the plot below, I&#8217;ve set up a [...]')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, '
+I recently gave a presentation on haXe at the Strands offices in Corvallis and Seattle.  I think it raised a few eyebrows, but probably ended up raising more questions than it answered.  This was to be expected, as haXe is pretty unique in its ability to target multiple web-related platforms.  The devil is in the [...]')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'Nicolas just added a new keyword to the haXe compiler called &#8220;using&#8221;.  In short, this keyword lets you inject additional methods into instances of Types.
+&#8220;using&#8221; explained
+The haXe &#8220;using&#8221; keyword  is essentially behaving like a type of mixin, but it&#8217;s different than other types of mixins, such as those implemented by Ruby.  Explaining things in words [...]')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'So, there&#8217;s this Tim Ferriss guy that&#8217;s some kind of productivity guru.  He&#8217;s written a book called &#8220;The 4 Hour Work Week&#8221; which gives you tips on how to streamline the amount of &#8220;work&#8221; that you do in a day.
+In the interest of self disclosure, I didn&#8217;t read the book, because I tend to be [...]')[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'My previous article talked a bit about Perl&#8217;s new &#8220;roles&#8221; method for managing typing.  In the article, I tried to address some of the criticism levied against duck typing, and in doing so perhaps misrepresented Perl Roles as being &#8220;rigid&#8221;.
+Another blogger by the name of Sam Crawley gives an overview of the way that roles [...]')[0m
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'Update:  I have a more recent post on this subject here.
+I recently read an article talking about the new &#8220;roles&#8221; system in Perl. Roles are classes of objects that perform the same set of functions.  So, if you had an &#8220;Eagle&#8221; object, or a &#8220;Sparrow&#8221; object, perhaps both would have the field &#8220;feathers&#8221;, and the [...]')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'Social networking has been a huge buzzword for the last few years.   Companies have sprung up around helping people keeping in touch with friends, family, colleagues, and potential colleagues in a semi-public, semi-permanent format.  In typical &#8220;buzzword&#8221; fashion, social networking has been mercilessly exploited and shoehorned into dozens of contrived contexts.  Whether it&#8217;s Walmart trying [...]')[0m
+  [4;35;1mEntry Create (0.3ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, 'I&#8217;m getting close (hopefully) to submitting my dissertation proposal (on music corpus visualization, natch).  This has been something that&#8217;s been a goal of mine for a long time, and I feel like my enthusiasm alone has carried me up to this point.  So, maybe I feel lucky that only recently have I started to feel [...]')[0m
+  [4;36;1mEntry Create (0.3ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "link", "description") VALUES('2009-09-28 06:11:06', NULL, '2009-09-28 06:11:06', NULL, 14, NULL, '
+Paul Lamere and I recently got our tutorial accepted to ISMIR 2009.  It is titled Using Music Visualizations for Discovery and will be a survey of all the different ways that researchers have approached visualizing music collections, and how we can use these methods to find new and interesting music.
+At first glance, this perhaps appears [...]')[0m
+Redirected to http://localhost:3000/sites/5
+Completed in 6395ms (DB: 21) | 302 Found [http://localhost/sites]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 23:11:06) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mSite Load (0.5ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 5) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;36;1mEntry Load (8.9ms)[0m   [0;1mSELECT "entries".* FROM "entries" INNER JOIN "feeds" ON "entries".feed_id = "feeds".id WHERE (("feeds".site_id = 5)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Rendered entries/_entry (0.1ms)
+Completed in 75ms (View: 52, DB: 9) | 200 OK [http://localhost/sites/5]

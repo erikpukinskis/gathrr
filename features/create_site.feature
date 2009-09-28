@@ -9,3 +9,4 @@ Feature: Creating Sites
       And I fill in "feeds" with "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"
       And I press "Bunch 'em"
     Then I should see "Bunchup is going to be so much fun!"
+      And I should see "tail end"
