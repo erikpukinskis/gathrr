@@ -115,3 +115,16 @@
   [4;36;1mFeed Create (0.3ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:00:00', '2009-09-28 04:00:00', 'http://bunchup.us/feed1.rss', 1)[0m
   [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:00:00', '2009-09-28 04:00:00', 'http://bunchup.us/feed2.rss', 1)[0m
   [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "feeds" [0m
+  [4;35;1mSite Create (0.6ms)[0m   [0mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('ev', '2009-09-28 04:58:37', '2009-09-28 04:58:37')[0m
+  [4;36;1mFeed Create (0.4ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed1.rss', 1)[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed2.rss', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "feeds" [0m
+  [4;35;1mSite Create (0.4ms)[0m   [0mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('ev', '2009-09-28 04:58:37', '2009-09-28 04:58:37')[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed1.rss', 1)[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed2.rss', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+  [4;35;1mSite Create (0.3ms)[0m   [0mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('ev', '2009-09-28 04:58:37', '2009-09-28 04:58:37')[0m
+  [4;36;1mFeed Create (0.2ms)[0m   [0;1mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed1.rss', 1)[0m
+  [4;35;1mFeed Create (0.2ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 04:58:37', '2009-09-28 04:58:37', 'http://bunchup.us/feed2.rss', 1)[0m
+  [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m

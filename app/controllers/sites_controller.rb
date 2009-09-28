@@ -55,6 +55,12 @@ class SitesController < ApplicationController
     end
   end
 
+  def refresh
+    @site = Site.find(params[:id])
+    @site.refresh
+    redirect_to url_for(@site)
+  end
+
   # PUT /sites/1
   # PUT /sites/1.xml
   def update

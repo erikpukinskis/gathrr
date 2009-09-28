@@ -1,5 +1,6 @@
 class Site < ActiveRecord::Base
   has_many :feeds
+  has_many :entries, :through => :feeds
 
   def feed_list
 

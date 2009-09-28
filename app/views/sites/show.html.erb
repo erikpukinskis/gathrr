@@ -1,8 +1,6 @@
-<p>
-  <b>Slug:</b>
-  <%=h @site.slug %>
-</p>
+<h1><%=h @site.slug %></h1>
+
+<%= render :partial => "entries/entry", :collection => @site.entries %>
 
 
 <%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>

@@ -1,13 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :feeds
 
-  map.resources :feeds
-
   map.connect '', :controller => 'sites', :action => 'new'
 
-  map.resources :sites
-
-  map.resources :sites
+  map.resources :sites, :member => [ :refresh ]
 
   # The priority is based upon order of creation: first created -> highest priority.
 
