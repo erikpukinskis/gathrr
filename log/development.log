@@ -11723,3 +11723,1601 @@ Rendered entries/_entry (0.3ms)
 Rendered entries/_entry (0.3ms)
 Rendered entries/_entry (0.5ms)
 Completed in 123ms (View: 87, DB: 15) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:28:12) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 84ms (View: 56, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:33:07) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 37ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (32.1ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "link" varchar(255), "description" text, "date" datetime, "created_at" datetime, "updated_at" datetime, "feed_id" integer, "content" text) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "site_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE TABLE "sites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "slug" varchar(255)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (44.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928094307')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928024910')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928032357')[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928025146')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090928050340')[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090928041452')[0m
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:34:12) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:34:52) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (97.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (1.0ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (2.1ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (1.0ms)
+Rendered entries/_entry (1.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (2.2ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (2.5ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Completed in 213ms (View: 94, DB: 98) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:34:57) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (14.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (1.7ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Completed in 126ms (View: 91, DB: 15) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:02) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 156ms (View: 125, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:06) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (16.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.5ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 109ms (View: 71, DB: 17) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:14) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 95ms (View: 62, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:24) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.5ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 69ms (View: 49, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:29) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.2ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 72ms (View: 49, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:35:46) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (7.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 135ms (View: 108, DB: 8) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:00) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.0ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 125ms (View: 74, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:06) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.1ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 78ms (View: 50, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:24) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (7.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (68.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 148ms (View: 117, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:30) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 73ms (View: 51, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:40) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (15.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 97ms (View: 61, DB: 16) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:36:55) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.0ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 219ms (View: 189, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:14) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 94ms (View: 63, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:25) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (19.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.8ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.8ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.8ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.5ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (1.5ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.5ms)
+Rendered entries/_entry (0.6ms)
+Completed in 144ms (View: 98, DB: 20) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:34) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.0ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 70ms (View: 48, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:49) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (15.3ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.5ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (1.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.5ms)
+Rendered entries/_entry (0.3ms)
+Completed in 137ms (View: 99, DB: 16) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:51) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.8ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 88ms (View: 58, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:37:56) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (1.4ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 101ms (View: 63, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:38:07) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (1.0ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (15.9ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (2.4ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (1.1ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.3ms)
+Completed in 140ms (View: 101, DB: 17) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:38:15) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.0ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (66.2ms)
+Rendered entries/_entry (0.8ms)
+Rendered entries/_entry (0.2ms)
+Completed in 150ms (View: 119, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:38:28) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.6ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.6ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 79ms (View: 48, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:38:43) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.4ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (5.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 113ms (View: 59, DB: 9) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:39:09) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (2.3ms)
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 165ms (View: 136, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:39:29) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (9.4ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.6ms)
+Rendered entries/_entry (1.3ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.7ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.7ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 78ms (View: 52, DB: 10) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:39:35) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mSite Load (0.3ms)[0m   [0;1mSELECT * FROM "sites" WHERE ("sites"."id" = 12) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;35;1mEntry Load (8.1ms)[0m   [0mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 12)) [0m
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (1.1ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.4ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 74ms (View: 48, DB: 8) | 200 OK [http://localhost/sites/12]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:39:43) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 174ms (View: 43, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:40:06) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 32ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:40:08) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:40:49) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 40ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:41:07) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 33ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:42:22) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 80ms (View: 9, DB: 0) | 200 OK [http://localhost/]

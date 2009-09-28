@@ -1,5 +1,5 @@
 Feature: Creating Sites
-  As a user
+  As a curator
   I want to be able to create a site with some feeds
   So that other people can easily follow them all
 
