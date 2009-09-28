@@ -18,7 +18,6 @@ class Feed < ActiveRecord::Base
     rss = RSS::Parser.parse(content, false)
     rss.items.each do |item| 
       entry = Entry.new(item.to_h)
-      debugger
       entries << entry
     end
   end
