@@ -6,7 +6,6 @@ Feature: Creating Sites
   Scenario: With valid feeds
     When I am on the homepage
       And I fill in "url" with "sumwit"
-      And I fill in "feeds" with "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"
+      And I fill in "feeds" with " http://bunchuptest.wordpress.com/feed/ "
       And I press "Bunch 'em"
-    Then I should see "Bunchup is going to be so much fun!"
-      And I should see "tail end"
+    Then I should see "surprise ending"

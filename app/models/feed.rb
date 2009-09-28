@@ -1,12 +1,4 @@
-require 'rss/1.0'
-require 'rss/2.0'
-require 'open-uri'
-
-class RSS::Rss::Channel::Item
-  def to_h
-    {:description => description}
-  end
-end
+require 'feed_tools'
 
 class Feed < ActiveRecord::Base
   belongs_to :site
@@ -17,12 +9,11 @@ class Feed < ActiveRecord::Base
   end
 
   def refresh
-    content = "" # raw content of rss feed will be loaded here
-    open(url) {|s| content = s.read }
-    rss = RSS::Parser.parse(content, false)
-    rss.items.each do |item| 
-      entry = Entry.new(item.to_h)
+    feed = FeedTools::Feed.open(url)
+
+    feed.items.each do |item|
+      entry = Entry.from_item(item)
       entries << entry
-    end
+    end 
   end
 end

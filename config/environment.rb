@@ -39,3 +39,10 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+class Object
+  def print_methods
+    methods.sort.each {|i| print "#{i}\n"}
+    nil
+  end
+end 

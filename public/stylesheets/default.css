@@ -10,8 +10,11 @@ body {
   margin-right: auto;
   background-color: #333;
   border: 1px solid #444;
+  margin-bottom: 1em;
+  padding: 1em 2em;
 }
 
 h1 {
   text-align: center;
+  text-shadow: 2px 2px 2px #000;
 }

@@ -4,7 +4,7 @@ describe Feed do
   it "should load entries" do
     feed = Feed.new(:url => "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss")
     feed.refresh
-    feed.entries[0].description.should match(/^Bunchup is going to be so much fun!/)
+    feed.entries[0].content.should match(/Bunchup is going to be so much fun!/)
   end
 
   it "should strip spaces off the url" do
