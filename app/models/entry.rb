@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'hpricot'
+
 class Entry < ActiveRecord::Base
   def Entry.from_item(item)
     Entry.new(:content => item.content)
@@ -9,15 +12,6 @@ class Entry < ActiveRecord::Base
   end
 
   def close_tags
-    return nil unless content
-    open_tags = []
-    tags = ""
-    content.scan(/\<([^\>\s\/]+)[^\>\/]*?\>/).each { |t| open_tags.unshift(t) }
-    content.scan(/\<\/([^\>\s\/]+)[^\>]*?\>/).each { |t| open_tags.slice!(open_tags.index(t)) }
-    open_tags.each do |t| 
-      tags += "</#{t}>"
-    end
-    content << tags
-    nil
+    self.content = Hpricot(self.content, :fixup_tags => true).to_html
   end
 end

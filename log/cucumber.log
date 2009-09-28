@@ -745,3 +745,117 @@ Rendering sites/show
 Rendered entries/_entry (0.7ms)
 Rendered entries/_entry (0.2ms)
 Completed in 10ms (View: 6, DB: 1) | 200 OK [http://www.example.com/sites/1]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:10:09) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 57ms (View: 17, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:10:09) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (0.8ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:10:09', '2009-09-28 13:10:09')[0m
+  [4;35;1mFeed Create (0.4ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:10:09', '2009-09-28 13:10:09', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:15:46) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 57ms (View: 49, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:15:46) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (1.0ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:15:46', '2009-09-28 13:15:46')[0m
+  [4;35;1mFeed Create (0.4ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:15:46', '2009-09-28 13:15:46', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:16:01) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:16:01) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (0.5ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:16:01', '2009-09-28 13:16:01')[0m
+  [4;35;1mFeed Create (0.3ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:16:01', '2009-09-28 13:16:01', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (0.3ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:18:11) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 118ms (View: 67, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:18:11) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (1.0ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:18:11', '2009-09-28 13:18:11')[0m
+  [4;35;1mFeed Create (0.4ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:18:11', '2009-09-28 13:18:11', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (0.8ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:19:24) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:19:24) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (0.6ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:19:24', '2009-09-28 13:19:24')[0m
+  [4;35;1mFeed Create (0.4ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:19:24', '2009-09-28 13:19:24', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-28 06:20:34) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>" http://bunchuptest.wordpress.com/feed/ ", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-28 06:20:34) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>" http://bunchuptest.wordpress.com/feed/ "}}
+  [4;36;1mSite Create (0.5ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 13:20:34', '2009-09-28 13:20:34')[0m
+  [4;35;1mFeed Create (0.3ms)[0m   [0mINSERT INTO "feeds" ("created_at", "updated_at", "url", "site_id") VALUES('2009-09-28 13:20:34', '2009-09-28 13:20:34', 'http://bunchuptest.wordpress.com/feed/', 1)[0m
+  [4;36;1mFeed Load (0.4ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds".site_id = 1) [0m
+  [4;35;1mEntry Create (0.5ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "content", "link", "description") VALUES('2009-09-28 13:20:53', NULL, '2009-09-28 13:20:53', NULL, 1, '<br /><p>This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post.</p>
+<p>This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post. This is a long blog post.</p>
+<p>With a surprise ending.</p>
+ <a href="http://feeds.wordpress.com/1.0/gocomments/bunchuptest.wordpress.com/3/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/comments/bunchuptest.wordpress.com/3/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/bunchuptest.wordpress.com/3/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/delicious/bunchuptest.wordpress.com/3/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/bunchuptest.wordpress.com/3/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/stumble/bunchuptest.wordpress.com/3/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/bunchuptest.wordpress.com/3/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/digg/bunchuptest.wordpress.com/3/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/bunchuptest.wordpress.com/3/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/reddit/bunchuptest.wordpress.com/3/" border="0" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=bunchuptest.wordpress.com&blog=9683669&post=3&subd=bunchuptest&ref=&feed=1" border="0" alt="" />', NULL, NULL)[0m
+  [4;36;1mEntry Create (0.4ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "date", "feed_id", "content", "link", "description") VALUES('2009-09-28 13:20:55', NULL, '2009-09-28 13:20:55', NULL, 1, '<br /><p>Welcome to <a href="http://wordpress.com/">WordPress.com</a>. This is your first post. Edit or delete it and start blogging!</p>
+ <a href="http://feeds.wordpress.com/1.0/gocomments/bunchuptest.wordpress.com/1/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/comments/bunchuptest.wordpress.com/1/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/bunchuptest.wordpress.com/1/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/delicious/bunchuptest.wordpress.com/1/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/bunchuptest.wordpress.com/1/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/stumble/bunchuptest.wordpress.com/1/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/bunchuptest.wordpress.com/1/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/digg/bunchuptest.wordpress.com/1/" border="0" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/bunchuptest.wordpress.com/1/" rel="nofollow"><img src="http://feeds.wordpress.com/1.0/reddit/bunchuptest.wordpress.com/1/" border="0" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=bunchuptest.wordpress.com&blog=9683669&post=1&subd=bunchuptest&ref=&feed=1" border="0" alt="" />', NULL, NULL)[0m
+Redirected to #<Site:0xb761c1ac>
+Completed in 20671ms (DB: 2) | 302 Found [http://www.example.com/sites]
+REQUESTING PAGE: GET http://www.example.com/sites/1 with {} and HTTP headers {"HTTP_REFERER"=>"/sites"}
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-28 06:20:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSite Load (0.8ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 1) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+  [4;36;1mEntry Load (1.6ms)[0m   [0;1mSELECT "entries".* FROM "entries" INNER JOIN feeds ON entries.feed_id = feeds.id WHERE (("feeds".site_id = 1)) [0m
+Rendered entries/_entry (0.5ms)
+Rendered entries/_entry (0.3ms)
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://www.example.com/sites/1]
