@@ -8,6 +8,11 @@ describe Entry do
   end
 
   it "should close html tags" do
-    Entry.new(:content => "<b>hi").content.should == "<b>hi</b>"
+    Entry.new(:content => "<b>hi").clean_content.content.should == "<b>hi</b>"
   end
+
+  it "should delete weird contentless tags, unless it's a br or img" do
+    Entry.new(:content => "<br/><img/><em/>").clean_content.content.should == "<br/><img/>"
+  end
+
 end
