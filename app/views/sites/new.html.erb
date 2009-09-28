@@ -4,6 +4,15 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :slug, 'url' %><br />
+    <%= f.text_field :slug %>.bunchup.us
+  </p>
+
+  <p>
+    <%= f.label :feeds %><br />
+    <%= f.text_area :feeds %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

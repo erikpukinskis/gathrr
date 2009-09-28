@@ -1,0 +1,18 @@
+# Logfile created on Sun Sep 27 20:13:21 -0700 2009REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-27 20:16:27) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:18:46) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 38ms (View: 30, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:19:22) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://www.example.com/]
