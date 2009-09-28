@@ -16,3 +16,189 @@ Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:19:22) [GET]
 Rendering template within layouts/sites
 Rendering sites/new
 Completed in 20ms (View: 13, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:25:16) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:26:17) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 30ms (View: 22, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:26:17) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:26:17) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:27:43) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 86ms (View: 78, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:27:43) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:27:43) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:28:21) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 33ms (View: 24, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:28:21) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:30:18) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:34:01) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 238ms (View: 229, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:34:02) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:34:02) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:34:12) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 37ms (View: 25, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:34:12) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:34:12) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:34:27) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 30ms (View: 22, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:34:27) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:34:27) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:34:40) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 34ms (View: 25, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:34:40) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:34:40) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feeds"=>nil}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:38:36) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-09-27 20:38:36) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:39:18) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-09-27 20:39:18) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:39:40) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:39:40) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+  [4;36;1mSite Create (0.5ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 03:39:40', '2009-09-28 03:39:40')[0m
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2009-09-27 20:39:40) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing SitesController#new (for 127.0.0.1 at 2009-09-27 20:40:08) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: POST /sites with {"commit"=>"Bunch 'em", "site"=>{"feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss", "slug"=>"sumwit"}} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SitesController#create (for 127.0.0.1 at 2009-09-27 20:40:08) [POST]
+  Parameters: {"commit"=>"Bunch 'em", "site"=>{"slug"=>"sumwit", "feed_list"=>"http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss"}}
+  [4;36;1mSite Create (0.5ms)[0m   [0;1mINSERT INTO "sites" ("slug", "created_at", "updated_at") VALUES('sumwit', '2009-09-28 03:40:08', '2009-09-28 03:40:08')[0m
+Redirected to http://www.example.com/sites/1
+Completed in 13ms (DB: 0) | 302 Found [http://www.example.com/sites]
+REQUESTING PAGE: GET http://www.example.com/sites/1 with {} and HTTP headers {"HTTP_REFERER"=>"/sites"}
+
+
+Processing SitesController#show (for 127.0.0.1 at 2009-09-27 20:40:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSite Load (0.5ms)[0m   [0mSELECT * FROM "sites" WHERE ("sites"."id" = 1) [0m
+Rendering template within layouts/sites
+Rendering sites/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://www.example.com/sites/1]
