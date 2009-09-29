@@ -14,7 +14,8 @@ module SubdomainSites
       ''
     end
     
-    def site_url( site_subdomain = default_site_subdomain, use_ssl = request.ssl? )
+    def site_url( site = nil, use_ssl = request.ssl? )
+      site_subdomain = site ? site.slug : default_site_subdomain
       print "in site_url. site_subdomain = #{site_subdomain}\n"
       http_protocol(use_ssl) + site_host(site_subdomain)
     end
