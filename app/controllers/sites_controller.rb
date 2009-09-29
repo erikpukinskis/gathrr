@@ -1,4 +1,23 @@
 class SitesController < ApplicationController
+
+  def default
+    if current_site
+      @site = current_site
+
+      respond_to do |format|
+        format.html { render :action => "show" }
+        format.xml  { render :xml => @site }
+      end
+    else
+      @site = Site.new
+
+      respond_to do |format|
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @site }
+      end
+    end
+  end
+
   # GET /sites
   # GET /sites.xml
   def index

@@ -4,12 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= yield :title %></title>
+  <title><%= yield :title or "Bunch Up!" %></title>
   <%= stylesheet_link_tag 'default' %>
 </head>
 <body>
   <div id="top_bar">
-    <a href="/">bunch up</a>
+    <a href="/">bunch up!</a>
   </div>
 
   <h1><%= yield :title %></h1>

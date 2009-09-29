@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :feeds
 
-  map.connect '', :controller => 'sites', :action => 'new'
+  map.connect '', :controller => 'sites', :action => 'default'
 
   map.resources :sites, :member => [ :refresh ]
 

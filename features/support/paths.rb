@@ -10,6 +10,9 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+
+    when /the "([^"]*)" site/
+      site_path(Site.find_by_slug($1)
     
     # Add more mappings here.
     # Here is a more fancy example:

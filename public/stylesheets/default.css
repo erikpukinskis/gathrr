@@ -49,12 +49,14 @@ a:visited {
 
 textarea {
   overflow: auto;
+  width: 330px;
 }
 
 #feed_examples {
   float: right;
   width: 180px;
   font-size: 0.8em;
+  color: lightblue;
 }
 
 
