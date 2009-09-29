@@ -1,7 +1,10 @@
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
-  validates_uniqueness_of :slug
+
+  validate do |site|
+    site.errors.add_to_base("That url is taken") if Site.find_by_slug(site.slug)
+  end
 
   def feed_list
 
