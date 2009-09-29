@@ -21,6 +21,17 @@ describe Site do
     site.feeds[1].url.should == "http://bunchup.us/feed2.rss"
   end
 
+  describe "with the same slug as an existing site" do
+    before do
+      Site.create!(:slug => "taken")
+      @site = Site.new(:slug => "taken")
+    end
+ 
+    it "should be invalid" do
+      @site.should_not be_valid
+    end
+  end
+
   describe "with two feeds with interleaved entries" do
     before do
       @first_entry = Entry.new(:date => Date.parse("9/28/2009"))

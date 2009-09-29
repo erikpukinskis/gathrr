@@ -1,7 +1,8 @@
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
-  
+  validates_uniqueness_of :slug
+
   def feed_list
 
   end
