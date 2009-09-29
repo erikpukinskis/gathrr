@@ -40,6 +40,14 @@ class Site < ActiveRecord::Base
   end
 
   def refresh
+    stale = last_refresh == nil or last_refresh < 1.hour.ago
+    if !waiting_for_refresh && stale
+      update_attributes(:waiting_for_refresh => true)
+      send_later(:refresh_now)
+    end
+  end
+
+  def refresh_now
     feeds.each {|feed| feed.refresh}
   end
 end

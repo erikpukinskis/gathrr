@@ -16,6 +16,8 @@ class Entry < ActiveRecord::Base
   end
 
   def <=>(other)
-    date ? date <=> other.date : 0
+    if date and other.date
+      date <=> other.date
+    else 0 end
   end
 end

@@ -22,4 +22,10 @@ describe Entry do
     Entry.new(:content => "<b>hi").clean_content.content.should == "<b>hi</b>"
   end
 
+  it "should be comparable even with nil dates" do
+    (Entry.new <=> Entry.new).should == 0
+    (Entry.new(:date => Time.now) <=> Entry.new).should == 0
+    (Entry.new <=> Entry.new(:date => Time.now)).should == 0
+  end
+
 end
