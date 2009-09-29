@@ -42,7 +42,7 @@ module SubdomainSites
     end      
           
     def current_site
-      return site_subdomain
+      return nil if site_subdomain == ''
       Site.find_by_slug(site_subdomain)
     end
     
