@@ -42,7 +42,7 @@ module SubdomainSites
     end      
           
     def current_site
-      print "in current_site. site_subdomain = #{site_subdomain}\n"
+      return site_subdomain
       Site.find_by_slug(site_subdomain)
     end
     

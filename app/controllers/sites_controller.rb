@@ -4,8 +4,6 @@ class SitesController < ApplicationController
     if current_site
       @site = current_site
 
-      flash[:notice] = "Site is #{@site.to_s}"
-
       respond_to do |format|
         format.html { render :action => "show" }
         format.xml  { render :xml => @site }
