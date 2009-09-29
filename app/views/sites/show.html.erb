@@ -1,4 +1,4 @@
 <% content_for :title do %><%= @site.slug %><% end %>
 
-<%= render :partial => "entries/entry", :collection => @site.entries %>
+<%= render :partial => "entries/entry", :collection => @site.entries_by_date.reverse %>
 

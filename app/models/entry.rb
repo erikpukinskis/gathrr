@@ -3,7 +3,7 @@ require 'hpricot'
 
 class Entry < ActiveRecord::Base
   def Entry.from_item(item)
-    Entry.new(:content => item.content)
+    Entry.new(:content => item.content, :date => item.published)
   end
 
   def clean_content
@@ -13,5 +13,9 @@ class Entry < ActiveRecord::Base
 
   def close_tags
     self.content = Hpricot(self.content, :fixup_tags => true).to_html
+  end
+
+  def <=>(other)
+    date ? date <=> other.date : 0
   end
 end
