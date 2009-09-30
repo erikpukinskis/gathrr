@@ -15,5 +15,15 @@ describe Feed do
   it "should convert twitter @name to a feed" do
     feed = Feed.new(:twitter_username => "whoever")
     feed.url.should == "http://twitter.com/statuses/user_timeline/whoever.rss"
-  endna
+  end
+
+  it "should find entries created after a certain time" do
+    time = Time.now
+    feed = Feed.create!
+    before = Entry.new(:created_at => time - 1.minute)
+    after = Entry.new(:created_at => time + 1.minute)
+    feed.entries << before << after
+
+    feed.entries_created_after(time).should == [after]
+  end
 end

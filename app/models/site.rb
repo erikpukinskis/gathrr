@@ -42,7 +42,7 @@ class Site < ActiveRecord::Base
   def refresh
     stale = last_refresh == nil or last_refresh < 1.hour.ago
     if !waiting_for_refresh && stale
-      update_attributes(:waiting_for_refresh => true)
+      update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
       send_later(:refresh_now)
     end
   end
@@ -50,4 +50,10 @@ class Site < ActiveRecord::Base
   def refresh_now
     feeds.each {|feed| feed.refresh}
   end
+
+  def newest_entries
+    feeds.inject([]) do |newest,feed|
+      newest + feed.entries_created_after(last_refresh)
+    end
+  end 
 end

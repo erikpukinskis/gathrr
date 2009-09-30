@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090929075652) do
+ActiveRecord::Schema.define(:version => 20090930091851) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20090929075652) do
     t.string   "slug"
     t.boolean  "waiting_for_refresh"
     t.datetime "last_refresh"
+    t.datetime "time_refresh_was_queued"
   end
 
 end

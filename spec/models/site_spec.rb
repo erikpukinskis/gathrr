@@ -32,6 +32,18 @@ describe Site do
     end
   end
 
+  it "should find new entries" do
+    refresh = Time.now
+    feed = Feed.create!
+    before = Entry.new(:created_at => refresh - 1.minute)
+    after = Entry.new(:created_at => refresh + 1.minute)
+    feed.entries << before << after
+    site = Site.create!(:last_refresh => refresh)
+    site.feeds << feed
+
+    site.newest_entries.should == [after]
+  end
+
   describe "with two feeds with interleaved entries" do
     before do
       @first_entry = Entry.new(:date => Date.parse("9/28/2009"))

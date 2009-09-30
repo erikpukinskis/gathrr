@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '', :controller => 'sites', :action => 'default'
 
-  map.resources :sites, :member => [ :refresh ]
+  map.resources :sites, :member => [ :refresh, :newest_entries ]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

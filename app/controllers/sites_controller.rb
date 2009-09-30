@@ -42,6 +42,18 @@ class SitesController < ApplicationController
     end
   end
 
+  def newest_entries
+    @site = Site.find(params[:id])
+
+    if stale?(:last_modified => @site.last_refresh)
+      render :partial => 'entries', :locals => { :enries => @site.newest_entries }
+    else
+      response['Cache-Control'] = 'public, max-age=1'
+    end
+  end
+
+
+
   # GET /sites/new
   # GET /sites/new.xml
   def new

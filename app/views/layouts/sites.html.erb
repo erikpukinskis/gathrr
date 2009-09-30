@@ -6,6 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= yield :title or "Bunch Up!" %></title>
   <%= stylesheet_link_tag 'default' %>
+  <%= javascript_include_tag 'prototype' %>
 </head>
 <body>
 
@@ -32,8 +33,6 @@
   <div id="top_bar">
     <a href="http://bunchup.us/">gathrr</a> is a few days old and super rough. We love feedback!
   </div>
-
-  <h1><%= yield :title %></h1>
 
   <div id="main_column">
     <p style="color: green"><%= flash[:notice] %></p>

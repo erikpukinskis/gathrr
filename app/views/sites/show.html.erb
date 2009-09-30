@@ -1,4 +1,32 @@
 <% content_for :title do %><%= @site.slug %><% end %>
 
+<h1><%= @site.slug %><div id="site_status"></div></h1>
+
 <%= render :partial => "entries/entry", :collection => @site.entries_by_date.reverse %>
 
+<script type="text/javascript">
+  function spin_and_wait(site_id, last_modified) {
+    $('site_status').addClassName('refreshing');
+    $('site_status').innerHTML = "loading...";
+    poll_for_completion(site_id, last_modified);
+  }
+
+  function poll_for_completion(site_id, last_modified) {
+    setTimeout(function() {
+      new Ajax.Request('/sites/' + site_id + '/newest_entries', {
+        method: 'get',
+        requestHeaders: { 'If-Modified-Since': last_modified },
+        onComplete: function(transport) {
+          if (transport.status == 304) {
+            poll_for_completion(site_id, last_modified);
+          } else if (transport.status == 200) {
+            $('new_stuff').innerHTML = transport.responseText
+          }
+        }
+      }) },
+      1000
+    )
+  }
+
+  spin_and_wait(<%= @site.id %>, '<%= @site.time_refresh_was_queued %>');
+</script>

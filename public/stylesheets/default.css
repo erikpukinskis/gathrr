@@ -84,3 +84,15 @@ textarea {
   overflow: hidden;
 }
 
+#site_status {
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 0.4em;
+  font-weight: normal;
+}
+
+#site_status.refreshing {
+  background-image: url('/images/spinner.gif');
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}

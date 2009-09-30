@@ -23,4 +23,8 @@ class Feed < ActiveRecord::Base
       entries << entry
     end 
   end
+
+  def entries_created_after(time)
+    Entry.find(:all, :conditions => ["feed_id = ? AND created_at > ?", id, time.utc])
+  end
 end
