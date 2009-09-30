@@ -48,10 +48,12 @@ class Site < ActiveRecord::Base
   end
 
   def refresh_now
+    update_attributes(:last_refresh => Time.now, :waiting_for_refresh => false)
     feeds.each {|feed| feed.refresh}
   end
 
   def newest_entries
+    debugger
     feeds.inject([]) do |newest,feed|
       newest + feed.entries_created_after(last_refresh)
     end

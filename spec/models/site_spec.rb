@@ -32,6 +32,19 @@ describe Site do
     end
   end
 
+
+  it "should find first entries after initial refresh" do
+    fake_item = mock(:content => "boo", :published => Time.now - 1.year)
+    fake_feed_tools_feed = mock(:items => [fake_item])
+    FeedTools::Feed.stub!(:open).and_return(fake_feed_tools_feed)
+
+    site = Site.create!
+    site.feeds << Feed.create!
+    site.refresh_now
+    site.newest_entries.length.should == 1
+    site.newest_entries.first.content.should == "boo"
+  end
+
   it "should find new entries" do
     refresh = Time.now
     feed = Feed.create!

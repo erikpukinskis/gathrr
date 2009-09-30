@@ -20,10 +20,12 @@ describe Feed do
   it "should find entries created after a certain time" do
     time = Time.now
     feed = Feed.create!
-    before = Entry.new(:created_at => time - 1.minute)
-    after = Entry.new(:created_at => time + 1.minute)
-    feed.entries << before << after
 
-    feed.entries_created_after(time).should == [after]
+    before = Entry.new(:created_at => time - 1.minute)
+    during = Entry.new(:created_at => time)
+    after  = Entry.new(:created_at => time + 1.minute)
+    feed.entries << before << during << after
+
+    feed.entries_created_after(time).should == [during,after]
   end
 end
