@@ -32,17 +32,36 @@ describe Site do
     end
   end
 
+  def queue_in_rss(content)
+    fake_item = mock(:content => content, :published => Time.now - 1.year)
+    @fake_feed_tools_feed.stub!(:items).and_return([fake_item])
+  end
 
-  it "should find first entries after initial refresh" do
-    fake_item = mock(:content => "boo", :published => Time.now - 1.year)
-    fake_feed_tools_feed = mock(:items => [fake_item])
-    FeedTools::Feed.stub!(:open).and_return(fake_feed_tools_feed)
+  describe "when feeds always return one new fake item" do
+    before do
+      @fake_feed_tools_feed = mock(:items => [])
+      FeedTools::Feed.stub!(:open).and_return(@fake_feed_tools_feed)
+      @site = Site.create!
+      @site.feeds << Feed.create!
+    end
 
-    site = Site.create!
-    site.feeds << Feed.create!
-    site.refresh_now
-    site.newest_entries.length.should == 1
-    site.newest_entries.first.content.should == "boo"
+    it "should find first entries after initial refresh" do
+      queue_in_rss("boo")
+      @site.refresh_now
+      @site.newest_entries.length.should == 1
+      @site.newest_entries.first.content.should == "boo"
+    end
+
+    it "should find additional entries after new refresh" do
+      queue_in_rss("old")
+      @site.refresh_now
+      queue_in_rss("new")
+      sleep 1
+      @site.refresh_now
+      @site.entries.length.should == 2
+      @site.newest_entries.length.should == 1
+      @site.newest_entries.first.content.should == "new"
+    end
   end
 
   it "should find new entries" do
@@ -56,6 +75,7 @@ describe Site do
 
     site.newest_entries.should == [after]
   end
+
 
   describe "with two feeds with interleaved entries" do
     before do

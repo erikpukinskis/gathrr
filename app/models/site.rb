@@ -53,7 +53,6 @@ class Site < ActiveRecord::Base
   end
 
   def newest_entries
-    debugger
     feeds.inject([]) do |newest,feed|
       newest + feed.entries_created_after(last_refresh)
     end
