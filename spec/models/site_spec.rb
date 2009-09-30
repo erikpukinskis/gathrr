@@ -23,12 +23,16 @@ describe Site do
 
   describe "with the same slug as an existing site" do
     before do
-      Site.create!(:slug => "taken")
-      @site = Site.new(:slug => "taken")
+      @original = Site.create!(:slug => "taken")
+      @imitator = Site.new(:slug => "taken")
     end
  
-    it "should be invalid" do
-      @site.should_not be_valid
+    it do
+      @original.should be_valid
+    end
+
+    it do
+      @imitator.should_not be_valid
     end
   end
 
@@ -61,6 +65,16 @@ describe Site do
       @site.entries.length.should == 2
       @site.newest_entries.length.should == 1
       @site.newest_entries.first.content.should == "new"
+    end
+
+    it "shouldn't be ready before the actual refresh" do
+      @site.refresh
+      @site.waiting_for_refresh.should be_true
+    end
+
+    it "should be ready after the refresh" do
+      @site.refresh_now
+      @site.waiting_for_refresh.should be_false
     end
   end
 

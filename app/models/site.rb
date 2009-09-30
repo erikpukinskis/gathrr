@@ -1,10 +1,7 @@
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
-
-  validate do |site|
-    site.errors.add_to_base("That url is taken") if Site.find_by_slug(site.slug)
-  end
+  validates_uniqueness_of :slug, :message => "That url is taken"
 
   def feed_list
 
@@ -40,6 +37,7 @@ class Site < ActiveRecord::Base
   end
 
   def refresh
+    debugger
     stale = last_refresh == nil or last_refresh < 1.hour.ago
     if !waiting_for_refresh && stale
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
@@ -48,8 +46,9 @@ class Site < ActiveRecord::Base
   end
 
   def refresh_now
-    update_attributes(:last_refresh => Time.now, :waiting_for_refresh => false)
+    update_attributes(:last_refresh => Time.now)
     feeds.each {|feed| feed.refresh}
+    update_attributes(:waiting_for_refresh => false)
   end
 
   def newest_entries

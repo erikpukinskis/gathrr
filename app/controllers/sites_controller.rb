@@ -44,8 +44,8 @@ class SitesController < ApplicationController
 
   def newest_entries
     @site = Site.find(params[:id])
-
-    if stale?(:last_modified => @site.last_refresh)
+    debugger
+    unless @site.waiting_for_refresh
       render :partial => 'entries', :locals => { :enries => @site.newest_entries }
     else
       response['Cache-Control'] = 'public, max-age=1'
