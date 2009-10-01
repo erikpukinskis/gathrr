@@ -15,8 +15,12 @@ module SubdomainSites
     end
     
     def site_url( site = nil, use_ssl = request.ssl? )
-      site_subdomain = site ? site.slug : default_site_subdomain
-      http_protocol(use_ssl) + site_host(site_subdomain)
+      if RAILS_ENV == "production"
+        site_subdomain = site ? site.slug : default_site_subdomain
+        http_protocol(use_ssl) + site_host(site_subdomain)
+      else
+        "/sites/#{site.id}"
+      end
     end
     
     def site_host( subdomain )

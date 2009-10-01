@@ -2,9 +2,6 @@
 
 <h1><%= @site.slug %><div id="site_status"></div></h1>
 
-<div id="new_stuff"></div>
-<%= render :partial => "entries/entry", :collection => @site.entries_by_date.reverse %>
-
 <% if @refreshing %>
   <script type="text/javascript">
     function spin_and_wait(site_id, last_modified) {
@@ -27,8 +24,7 @@
             if (transport.status == 304) {
               poll_for_completion(site_id, last_modified);
             } else if (transport.status == 200) {
-              $('new_stuff').innerHTML = transport.responseText
-              stop_spinning();
+              window.location.href = '<%= url_for(@site) %>';
             }
           }
         }) },
@@ -38,4 +34,7 @@
 
     spin_and_wait(<%= @site.id %>, '<%= @site.time_refresh_was_queued %>');
   </script>
+<% else %>
+  <%= render :partial => "entries/entry", :collection => @site.entries_by_date.reverse %>
 <% end %>
+

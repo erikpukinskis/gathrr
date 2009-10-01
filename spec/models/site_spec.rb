@@ -5,6 +5,27 @@ describe Site do
     Site.create!(:slug => "ev", :feed_list => "http://bunchup.us/feed1.rss\nhttp://bunchup.us/feed2.rss")
   end
 
+  describe "before load" do
+    before do
+      @site = Site.create!
+    end
+
+    it do
+      @site.should_not be_loaded
+    end
+  end
+
+  describe "after load" do
+    before do
+      @site = Site.create!
+      @site.refresh_now
+    end
+    
+    it do
+      @site.should be_loaded
+    end
+  end
+
   it "should create a bunch of feeds" do
     lambda {
       with_two_urls

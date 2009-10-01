@@ -40,6 +40,10 @@ class Site < ActiveRecord::Base
     last_refresh == nil or last_refresh < 1.hour.ago
   end
 
+  def loaded?
+    !!last_refresh
+  end
+
   def refresh
     refreshing = !waiting_for_refresh && stale
     if refreshing

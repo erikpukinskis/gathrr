@@ -3,11 +3,14 @@ class SitesController < ApplicationController
   def default
     if current_site
       @site = current_site
-      @site.refresh
 
-      respond_to do |format|
-        format.html { render :action => "show" }
-        format.xml  { render :xml => @site }
+      if @site.loaded?
+        respond_to do |format|
+          format.html # show.html.erb
+          format.xml  { render :xml => @site }
+        end
+      else
+        render :action => 'loading'
       end
     else
       @site = Site.new
@@ -34,12 +37,14 @@ class SitesController < ApplicationController
   # GET /sites/1.xml
   def show
     @site = Site.find(params[:id])
-
-    @refreshing = @site.refresh
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @site }
+    if @site.loaded?
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @site }
+      end
+    else
+      @site.refresh
+      render :action => 'loading'
     end
   end
 
@@ -47,7 +52,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
 
     unless @site.waiting_for_refresh
-      render :partial => 'entries/entry', :collection => @site.newest_entries
+      render :nothing => true, :status => 200
     else
       render :nothing => true, :status => 304
     end
@@ -78,6 +83,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
+        @site.reload
         flash[:notice] = 'Site was successfully created.'
         format.html { redirect_to(@site) }
         format.xml  { render :xml => @site, :status => :created, :location => @site }
