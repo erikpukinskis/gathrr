@@ -2,7 +2,7 @@ class SitesController < ApplicationController
 
   def do_show
     @site = current_site ? current_site : Site.find(params[:id])
-    @page = params[:page].to_i ||= 1
+    @page = params[:page] ? params[:page].to_i : 1
 
     if @site.loaded?
       respond_to do |format|
