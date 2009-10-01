@@ -1,6 +1,7 @@
 class SitesController < ApplicationController
 
   def do_show
+    @site = current_site ||= Site.find(params[:id])
     @page = params[:page].to_i ||= 1
 
     if @site.loaded?
@@ -15,7 +16,6 @@ class SitesController < ApplicationController
 
   def default
     if current_site
-      @site = current_site
       do_show
     else
       @site = Site.new
@@ -41,10 +41,10 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.xml
   def show
-    @site = Site.find(params[:id])
     do_show
   end
 
+  # GET /sites/1/newest_entries
   def newest_entries
     @site = Site.find(params[:id])
 
