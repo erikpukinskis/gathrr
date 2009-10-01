@@ -76,6 +76,10 @@ textarea {
 
 /* ENTRIES PAGE */
 
+#new_stuff {
+  display: inline;
+}
+
 .entry, .center_form {
   background-color: #333;
   border: 1px solid #444;
@@ -96,3 +100,5 @@ textarea {
   background-repeat: no-repeat;
   padding-left: 20px;
 }
+
+

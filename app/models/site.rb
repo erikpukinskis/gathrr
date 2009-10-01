@@ -36,12 +36,17 @@ class Site < ActiveRecord::Base
     self.feed_list = @feed_string if @feed_string
   end
 
+  def stale
+    last_refresh == nil or last_refresh < 1.hour.ago
+  end
+
   def refresh
-    stale = last_refresh == nil or last_refresh < 1.hour.ago
-    if !waiting_for_refresh && stale
+    refreshing = !waiting_for_refresh && stale
+    if refreshing
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
       send_later(:refresh_now)
     end
+    refreshing
   end
 
   def refresh_now

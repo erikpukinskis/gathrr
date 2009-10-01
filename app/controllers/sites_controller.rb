@@ -34,7 +34,8 @@ class SitesController < ApplicationController
   # GET /sites/1.xml
   def show
     @site = Site.find(params[:id])
-    @site.refresh
+
+    @refreshing = @site.refresh
 
     respond_to do |format|
       format.html # show.html.erb
