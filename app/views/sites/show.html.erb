@@ -6,7 +6,7 @@
 
 <div class="pages">
 pages
-<% (1..@site.pages.count).each do |page| %>
+<% (1..@site.pages.length).each do |page| %>
   <a href="<%= url_for(@site) %>/page/<%= page %>"><%= page %></a>
 <% end %>
 </div>
