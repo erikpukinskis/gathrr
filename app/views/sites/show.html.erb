@@ -7,6 +7,6 @@
 <div class="pages">
 pages
 <% (1..@site.pages.length).each do |page| %>
-  <a href="<%= url_for(@site) %>/page/<%= page %>"><%= page %></a>
+  <a href="<%= site_url(@site) %>/page/<%= page %>"><%= page %></a>
 <% end %>
 </div>
