@@ -37,7 +37,6 @@ class Site < ActiveRecord::Base
   end
 
   def refresh
-    debugger
     stale = last_refresh == nil or last_refresh < 1.hour.ago
     if !waiting_for_refresh && stale
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)

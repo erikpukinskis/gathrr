@@ -44,11 +44,11 @@ class SitesController < ApplicationController
 
   def newest_entries
     @site = Site.find(params[:id])
-    debugger
+
     unless @site.waiting_for_refresh
-      render :partial => 'entries', :locals => { :enries => @site.newest_entries }
+      render :partial => 'entries/entry', :collection => @site.newest_entries
     else
-      response['Cache-Control'] = 'public, max-age=1'
+      render :nothing => true, :status => 304
     end
   end
 
@@ -89,7 +89,7 @@ class SitesController < ApplicationController
 
   def refresh
     @site = Site.find(params[:id])
-    @site.refresh
+    @site.refresh_now
     redirect_to url_for(@site)
   end
 
