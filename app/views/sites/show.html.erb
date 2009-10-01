@@ -2,7 +2,6 @@
 
 <h1><%= @site.slug %><div id="site_status"></div></h1>
 
-<%= RAILS_ENV %>
 <% if @refreshing %>
   <script type="text/javascript">
     function spin_and_wait(site_id, last_modified) {

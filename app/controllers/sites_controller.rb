@@ -6,7 +6,7 @@ class SitesController < ApplicationController
 
       if @site.loaded?
         respond_to do |format|
-          format.html # show.html.erb
+          format.html { render :action => "show" }
           format.xml  { render :xml => @site }
         end
       else

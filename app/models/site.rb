@@ -1,3 +1,10 @@
+class SiteRefreshJob < Struct.new(:site, :continuous)
+  def perform
+    site.refresh_now
+    Site.queue_another if continuous
+  end    
+end  
+
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
@@ -48,6 +55,7 @@ class Site < ActiveRecord::Base
     refreshing = !waiting_for_refresh && stale
     if refreshing
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
+      Delayed::Job.enqueue SiteRefreshJob.new(:site => self, :continuous => false)
       send_later(:refresh_now)
     end
     refreshing
@@ -64,4 +72,15 @@ class Site < ActiveRecord::Base
       newest + feed.entries_created_after(last_refresh)
     end
   end 
+
+  def refresh_and_queue_another
+    refresh_now
+    Site.queue_another
+  end
+
+  def Site.queue_another
+    site = Site.find(:first, :conditions => ["last_refresh < ", 1.hour.ago.utc], 
+                     :order => "last_refresh")
+    site.send_later(:refresh_and_queue_another)
+  end
 end
