@@ -5,17 +5,32 @@ class SiteRefreshJob < Struct.new(:site, :continuous)
   end    
 end  
 
+class Array
+  def / len
+    a = []
+    each_with_index do |x,i|
+      a << [] if i % len == 0
+      a.last << x
+    end
+    a
+  end
+end
+
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
   validates_uniqueness_of :slug, :message => "That url is taken"
 
   def feed_list
-
+    
   end
 
   def entries_by_date
     entries.sort
+  end
+
+  def pages
+    (entries_by_date.reverse / 15)
   end
 
   def feed_list=(feed_string)

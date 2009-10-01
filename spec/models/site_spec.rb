@@ -5,6 +5,30 @@ describe Site do
     Site.create!(:slug => "ev", :feed_list => "http://bunchup.us/feed1.rss\nhttp://bunchup.us/feed2.rss")
   end
 
+  describe "with 18 entries" do
+    before do
+      feed = Feed.create!
+      (1..18).each do |num|
+        feed.entries << Entry.new
+      end
+      @site = Site.create!
+      @site.feeds << feed
+    end
+
+    it "first page should have 15 entries" do
+      @site.pages[0].length.should == 15
+    end
+
+    it "second page should have 3 entries" do
+      @site.pages[1].length.should == 3
+    end
+
+    it "should have 2 pages" do
+      @site.pages.count.should == 2
+    end
+
+  end
+
   describe "before load" do
     before do
       @site = Site.create!

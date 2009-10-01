@@ -1,17 +1,22 @@
 class SitesController < ApplicationController
 
+  def do_show
+    @page = params[:page] ||= 1
+
+    if @site.loaded?
+      respond_to do |format|
+        format.html { render :action => "show" }
+        format.xml  { render :xml => @site }
+      end
+    else
+      render :action => 'loading'
+    end
+  end
+
   def default
     if current_site
       @site = current_site
-
-      if @site.loaded?
-        respond_to do |format|
-          format.html { render :action => "show" }
-          format.xml  { render :xml => @site }
-        end
-      else
-        render :action => 'loading'
-      end
+      do_show
     else
       @site = Site.new
 
@@ -37,15 +42,7 @@ class SitesController < ApplicationController
   # GET /sites/1.xml
   def show
     @site = Site.find(params[:id])
-    if @site.loaded?
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @site }
-      end
-    else
-      @site.refresh
-      render :action => 'loading'
-    end
+    do_show
   end
 
   def newest_entries
