@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
 
   def do_show
-    @page = params[:page] ||= 1
+    @page = params[:page].to_i ||= 1
 
     if @site.loaded?
       respond_to do |format|

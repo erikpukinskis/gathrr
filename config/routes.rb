@@ -5,6 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :sites, :member => [ :refresh, :newest_entries ]
 
+  map.connect '/sites/:id/page/:page', :controller => 'sites', :action => 'show'
+  map.connect '/page/:page', :controller => 'sites', :action => 'show'
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

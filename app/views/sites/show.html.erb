@@ -4,3 +4,9 @@
 
 <%= render :partial => "entries/entry", :collection => @site.pages[@page-1] %>
 
+<div class="pages">
+pages
+<% (1..@site.pages.count).each do |page| %>
+  <a href="<%= url_for(@site) %>/page/<%= page %>"><%= page %></a>
+<% end %>
+</div>
