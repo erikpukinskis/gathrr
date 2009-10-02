@@ -46,3 +46,25 @@ class Object
     nil
   end
 end 
+
+class Time
+  def to_human
+    distance_in_minutes = (((Time.now - self).abs)/60).ceil
+    case distance_in_minutes
+      when 0..1           then time = "#{distance_in_minutes} minute ago"
+      when 0..59          then time = "#{distance_in_minutes} minutes ago"
+      when 60..90         then time = "1 hour ago"
+      when 90..1440       then time = "#{(distance_in_minutes.to_f / 60.0).round} hours ago"
+      else time = strftime("%-1I:%M %p %b #{day.ordinal}")
+    end
+    return time
+  end
+end
+
+class Numeric
+	def ordinal
+		self.to_s + ( (10...20).include?(self) ? 'th' : %w{ th st nd rd th th th th th th }[self % 10] )
+	end
+end
+
+

@@ -1,9 +1,3 @@
-class SiteRefreshJob < Struct.new(:site, :continuous)
-  def perform
-    site.refresh_now
-    Site.queue_another if continuous
-  end    
-end  
 
 class Array
   def / len
@@ -20,6 +14,7 @@ class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
   validates_uniqueness_of :slug, :message => "That url is taken"
+  after_create :refresh
 
   def feed_list
     
@@ -68,9 +63,10 @@ class Site < ActiveRecord::Base
 
   def refresh
     refreshing = !waiting_for_refresh && stale
+
     if refreshing
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
-      Delayed::Job.enqueue SiteRefreshJob.new(:site => self, :continuous => false)
+      Delayed::Job.enqueue SiteRefreshJob.new(self, false)
       send_later(:refresh_now)
     end
     refreshing

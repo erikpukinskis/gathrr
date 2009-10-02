@@ -2,6 +2,8 @@ require 'rubygems'
 require 'hpricot'
 
 class Entry < ActiveRecord::Base
+  belongs_to :feed
+
   def Entry.from_item(item)
     Entry.new(:content => item.content, :date => item.published)
   end

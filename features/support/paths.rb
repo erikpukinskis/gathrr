@@ -12,7 +12,7 @@ module NavigationHelpers
       '/'
 
     when /the "([^"]*)" site/
-      site_path(Site.find_by_slug($1)
+      "/sites/#{Site.find_by_slug($1)[:id]}"
     
     # Add more mappings here.
     # Here is a more fancy example:

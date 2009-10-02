@@ -11,12 +11,17 @@ class Feed < ActiveRecord::Base
     end
   end
 
+  def service_link
+    "<a href=\"#{link}\">Twitter</a>"
+  end
+
   def url=(url)
     super(url.strip)
   end
 
   def refresh
     feed = FeedTools::Feed.open(url)
+    update_attributes(:link => feed.link, :title => feed.title)
 
     feed.items.each do |item|
       entry = Entry.from_item(item).clean_content

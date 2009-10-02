@@ -1,6 +1,21 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Feed do
+  describe "from twitter" do
+    before do 
+      @feed = Feed.create!(:twitter_username => "bunchuptest")
+      @feed.refresh
+    end
+
+    it "should have a good service link" do
+      @feed.service_link.should == "<a href=\"#{@feed.link}\">Twitter</a>"
+    end
+
+    it "should have a link" do
+      @feed.link.should == "http://twitter.com/bunchuptest"
+    end
+  end
+
   it "should load entries" do
     feed = Feed.new(:url => "http://bunchuptest.blogspot.com/feeds/posts/default?alt=rss")
     feed.refresh

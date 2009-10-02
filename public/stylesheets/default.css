@@ -143,3 +143,11 @@ input.url {
   text-decoration: none;
   padding: 3px 8px;
 }
+
+.entry .meta {
+  font-size: 0.8em;
+}
+
+.entry .meta, .entry .meta a {
+  color: #999;
+}

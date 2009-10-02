@@ -80,7 +80,6 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        @site.reload
         flash[:notice] = 'Site was successfully created.'
         format.html { redirect_to(@site) }
         format.xml  { render :xml => @site, :status => :created, :location => @site }
