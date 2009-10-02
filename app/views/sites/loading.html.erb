@@ -11,7 +11,7 @@
           if (transport.status == 304) {
             poll_for_completion(site_id, last_modified);
           } else if (transport.status == 200) {
-            window.location.href = '<%= url_for(@site) %>';
+            window.location.href = '<%= site_url(@site) %>';
           }
         }
       }) },
