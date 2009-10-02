@@ -58,11 +58,6 @@ a:visited {
 
 /* SIGNUP FORM */
 
-textarea {
-  overflow: auto;
-  width: 330px;
-}
-
 #feed_examples {
   float: right;
   width: 180px;
@@ -80,6 +75,7 @@ textarea {
 .field_inner input {
   font-size: 1em;
   font-family: Georgia;
+  background: none;
 }
 
 input.url {
@@ -98,9 +94,64 @@ input.url {
   font-family: Georgia;
 }
 
+.field_inner {
+  background: white url('/images/field_background.png') repeat-x;
+}
+
 .field_inner input {
   border: 0;
 }
+
+.center_form textarea {
+  width: 100%;
+}
+
+.center_form #feed_entry textarea {
+  overflow: auto;
+  background: none;
+  border: 0;
+  width: 310px;
+  height: 232px;
+  font-family: Helvetica;
+  padding: 8px;
+}
+
+#feed_entry {
+  width: 330px;
+  height: 250px;
+}
+
+#feed_entry .field_inner {
+  padding: 0;
+}
+
+.center_form label {
+  font-size: 1.3em;
+  color: #DDD;
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+.center_form input[type=submit]{
+  font-size: 1.3em;
+  border: 1px solid #CCC;
+  background: url('/images/button_background.png');
+  -webkit-border-radius: 5px;
+  font-weight: bold;
+  padding: 8px 20px;
+  text-shadow: 1px 1px 1px #CCC;;
+  color: #222;
+}
+
+.center_form input[type=submit]:hover {
+  background: none;
+  background-color: #DDD;
+  color: #111;
+  text-shadow: 1px 1px 1px white;
+}
+
 
 
 
@@ -151,3 +202,5 @@ input.url {
 .entry .meta, .entry .meta a {
   color: #999;
 }
+
+

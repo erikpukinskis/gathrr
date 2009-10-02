@@ -7,17 +7,18 @@
 <% form_for(@site) do |f| %>
   <%= f.error_messages %>
 
-  <p>
+
+  <div class="field">
     <%= f.label :slug, 'URL' %><br />
     <div class="field_outer">
     <div class="field_inner">
       <%= f.text_field :slug, :class => 'url' %>.gathrr.com
     </div>
     </div>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :feed_list, 'feeds' %><br />
+  <div class="field">
+    <%= f.label :feed_list, 'Feeds' %><br />
     <div id="feed_examples">
       <p>Enter RSS feeds:<br>
       http://whitehouse.gov/feed/blog</p>
@@ -28,8 +29,14 @@
       <p>... one per line!</p>
       
     </div>
-    <%= f.text_area :feed_list %>
-  </p>
+
+    <div class="field_outer" id="feed_entry">
+    <div class="field_inner">
+      <%= f.text_area :feed_list %>
+    </div>
+    </div>
+  </div>
+
   <p>
     <%= f.submit "Bunch 'em" %>
   </p>
