@@ -75,7 +75,7 @@ class Site < ActiveRecord::Base
 
     if refreshing
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
-      Delayed::Job.enqueue SiteRefreshJob.new(self, false)
+      Delayed::Job.enqueue SiteRefreshJob.new(id, false), 1
     end
     refreshing
   end
@@ -87,7 +87,7 @@ class Site < ActiveRecord::Base
     update_attributes(:waiting_for_refresh => false)
   end
 
-  def Site.queue_another
-    Delayed::Job.enqueue SiteRefreshJob.new(nil, true)
+  def Site.queue_another(wait_until = nil)
+    Delayed::Job.enqueue SiteRefreshJob.new(nil, true), 2, wait_until
   end
 end
