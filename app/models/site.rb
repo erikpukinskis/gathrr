@@ -54,11 +54,10 @@ class Site < ActiveRecord::Base
     identifiers.each do |id|  
       if id.first == '@'
         without_at = id[1,id.length]
-        params = {:twitter_username => without_at.strip}
-      else 
-        params = {:url => id}
+        feeds << Feed.new({:twitter_username => without_at.strip})
+      elsif /^http:\/\//.match(id)
+        feeds << Feed.new({:url => id})
       end
-      feeds << Feed.new(params)
     end
   end
 
@@ -77,25 +76,18 @@ class Site < ActiveRecord::Base
     if refreshing
       update_attributes(:waiting_for_refresh => true, :time_refresh_was_queued => Time.now)
       Delayed::Job.enqueue SiteRefreshJob.new(self, false)
-      send_later(:refresh_now)
     end
     refreshing
   end
 
   def refresh_now
+    print "Mmm, refreshing!\n"
     update_attributes(:last_refresh => Time.now)
     feeds.each {|feed| feed.refresh}
     update_attributes(:waiting_for_refresh => false)
   end
 
-  def refresh_and_queue_another
-    refresh_now
-    Site.queue_another
-  end
-
   def Site.queue_another
-    site = Site.find(:first, :conditions => ["last_refresh < ", 1.hour.ago.utc], 
-                     :order => "last_refresh")
-    site.send_later(:refresh_and_queue_another)
+    Delayed::Job.enqueue SiteRefreshJob.new(nil, true)
   end
 end

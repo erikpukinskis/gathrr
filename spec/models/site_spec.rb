@@ -37,6 +37,11 @@ describe Site do
   it "should be invalid without at least one feed" do
     make_site({:feed_list => ""}).should_not be_valid
   end
+
+  it "should not import bad sites" do
+    site = create_site({:feed_list => "ando\n@bunchuptest"})
+    site.feeds.count.should == 1
+  end
     
 
   describe "with 18 entries" do
