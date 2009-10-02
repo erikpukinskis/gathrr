@@ -5,8 +5,6 @@ class SitesController < ApplicationController
     @page = params[:page] ? params[:page].to_i : 1
 
     if @site.loaded?
-      response.headers['Cache-Control'] = 'public, max-age=900' if RAILS_ENV == 'production'
-
       respond_to do |format|
         format.html { render :action => "show" }
         format.xml  { render :xml => @site }
@@ -82,7 +80,6 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        flash[:notice] = 'Site was successfully created.'
         format.html { redirect_to(@site) }
         format.xml  { render :xml => @site, :status => :created, :location => @site }
       else

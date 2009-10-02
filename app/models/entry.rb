@@ -5,7 +5,7 @@ class Entry < ActiveRecord::Base
   belongs_to :feed
 
   def Entry.from_item(item)
-    Entry.new(:content => item.content, :date => item.published)
+    Entry.new(:content => item.content, :date => item.published, :title => item.title, :link => item.link)
   end
 
   def clean_content

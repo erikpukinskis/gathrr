@@ -14,7 +14,6 @@ class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
   validates_uniqueness_of :slug, :message => "That url is taken"
-  after_create :refresh
 
   def feed_list
     
@@ -51,6 +50,7 @@ class Site < ActiveRecord::Base
 
   def after_create
     self.feed_list = @feed_string if @feed_string
+    refresh_now
   end
 
   def stale

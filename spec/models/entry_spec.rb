@@ -5,12 +5,20 @@ describe Entry do
   describe "made from an item" do
     before do
       @now = Time.now
-      item = mock(FeedTools::FeedItem, :content => 'hi', :published => @now)
+      item = mock(FeedTools::FeedItem, :content => 'hi', :published => @now, :title => "The Title", :link => "http://link")
       @entry = Entry.from_item(item)
     end
 
     it "should load content" do   
       @entry.content.should == "hi"
+    end
+
+    it do
+      @entry.title.should == "The Title"
+    end
+
+    it do
+      @entry.link.should == "http://link"
     end
 
     it "should get the published date" do   

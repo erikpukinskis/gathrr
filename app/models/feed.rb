@@ -12,7 +12,8 @@ class Feed < ActiveRecord::Base
   end
 
   def service_link
-    "<a href=\"#{link}\">Twitter</a>"
+    text = /http:\/\/twitter.com/.match(link) ? "Twitter" : title
+    "<a href=\"#{link}\">#{text}</a>"
   end
 
   def url=(url)
@@ -22,11 +23,17 @@ class Feed < ActiveRecord::Base
   def refresh
     feed = FeedTools::Feed.open(url)
     update_attributes(:link => feed.link, :title => feed.title)
-
+    newest = newest_entry
     feed.items.each do |item|
-      entry = Entry.from_item(item).clean_content
-      entries << entry
+      if !newest or item.published.utc > newest.date + 1.second
+        entry = Entry.from_item(item).clean_content
+        entries << entry
+      end
     end 
+  end
+
+  def newest_entry
+    Entry.find(:first, :conditions => ["feed_id = ?", id], :order => "date DESC")
   end
 
   def entries_created_after(time)
