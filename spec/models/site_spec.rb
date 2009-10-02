@@ -18,6 +18,17 @@ describe Site do
     create_site({:slug => "ev", :feed_list => "http://bunchup.us/feed1.rss\nhttp://bunchup.us/feed2.rss"})
   end
 
+  describe "with a feed but no list" do
+    before do
+      @site = make_site({:feed_list => nil})
+      @site.feeds << Feed.new
+    end
+
+    it do
+      @site.should be_valid
+    end
+  end
+
   it "should be invalid without a slug" do
     make_site({:slug => ""}).should_not be_valid
     make_site({:slug => " "}).should_not be_valid

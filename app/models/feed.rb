@@ -28,7 +28,9 @@ class Feed < ActiveRecord::Base
     feed = FeedTools::Feed.open(url)
     update_attributes(:link => feed.link, :title => feed.title)
     newest = newest_entry
+
     feed.items.each do |item|
+      debugger
       if !newest or item.published.utc > newest.date + 1.second
         entry = Entry.from_item(item).clean_content
         entries << entry
