@@ -8,7 +8,7 @@ describe Feed do
     end
 
     it do
-      @feed.service.should == 'twitter'
+      @feed.service.should == :twitter
     end
 
     it "should have a good service link" do

@@ -11,8 +11,12 @@ class Feed < ActiveRecord::Base
     end
   end
 
+  def service
+    /http:\/\/twitter.com/.match(link) ? :twitter : :blog
+  end
+
   def service_link
-    text = /http:\/\/twitter.com/.match(link) ? "Twitter" : title
+    text = service == :twitter ? "Twitter" : title
     "<a href=\"#{link}\">#{text}</a>"
   end
 
