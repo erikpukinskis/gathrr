@@ -7,7 +7,7 @@ class SiteRefreshJob
   end
 
   def perform
-    frequency = 1.minute
+    frequency = 1.hour
     if @site
       @site = Site.find_by_id(@site)
       @site.refresh_now
