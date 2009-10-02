@@ -1,6 +1,6 @@
 <% content_for :title do %><%= @site.slug %><% end %>
 
-<h1><%= @site.slug %><div id="site_status"></div></h1>
+<h1><%= @site.slug %></h1>
 
 <%= render :partial => "entries/entry", :collection => @site.pages[@page-1] %>
 

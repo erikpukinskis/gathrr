@@ -3,7 +3,13 @@
 <h2>Put your group's blogs, tweets, and more all on one page. Create a shared site in 30 seconds.</h2>
 
 <div class="center_form">
-
+<script type="text/javascript">
+  function clean_slug() {
+    if ($('slug').value.match(/[^-_a-z0-9]/)) {
+      $('slug').value = $('slug').value.replace(/[^-_a-z0-9]/g, '');
+    }
+  }
+</script>
 <% form_for(@site) do |f| %>
   <%= f.error_messages %>
 
@@ -12,7 +18,7 @@
     <%= f.label :slug, 'URL' %><br />
     <div class="field_outer">
     <div class="field_inner">
-      <%= f.text_field :slug, :class => 'url' %>.gathrr.com
+      <%= f.text_field :slug, :class => 'url', :id => 'slug', :onKeyUp => 'javascript:clean_slug();' %>.gathrr.com
     </div>
     </div>
   </div>

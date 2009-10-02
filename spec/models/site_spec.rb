@@ -1,17 +1,40 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+  
+def create_site(params = {})
+  site = make_site(params)
+  site.save
+  site
+end
+
+def make_site(params = {})
+  Site.new({
+    :slug => "halo",
+    :feed_list => "bad"
+  }.merge(params))
+end
 
 describe Site do
   def with_two_urls
-    Site.create!(:slug => "ev", :feed_list => "http://bunchup.us/feed1.rss\nhttp://bunchup.us/feed2.rss")
+    create_site({:slug => "ev", :feed_list => "http://bunchup.us/feed1.rss\nhttp://bunchup.us/feed2.rss"})
   end
+
+  it "should be invalid without a slug" do
+    make_site({:slug => ""}).should_not be_valid
+    make_site({:slug => " "}).should_not be_valid
+  end
+
+  it "should be invalid without at least one feed" do
+    make_site({:feed_list => ""}).should_not be_valid
+  end
+    
 
   describe "with 18 entries" do
     before do
       feed = Feed.create!
       (1..18).each do |num|
-        feed.entries << Entry.new
+        feed.entries << Entry.new(:content => num.to_s)
       end
-      @site = Site.create!
+      @site = create_site
       @site.feeds << feed
     end
 
@@ -31,7 +54,7 @@ describe Site do
 
   describe "before load" do
     before do
-      @site = Site.create!
+      @site = Site.new
     end
 
     it do
@@ -41,7 +64,8 @@ describe Site do
 
   describe "after load" do
     before do
-      @site = Site.create!
+      queue_in_rss("hi", Time.now)
+      @site = create_site
       @site.refresh_now
     end
     
@@ -68,7 +92,7 @@ describe Site do
 
   describe "with the same slug as an existing site" do
     before do
-      @original = Site.create!(:slug => "taken")
+      @original = create_site({:slug => "taken"})
       @imitator = Site.new(:slug => "taken")
     end
  
@@ -83,33 +107,15 @@ describe Site do
 
   def queue_in_rss(content, date)
     fake_item = mock(:content => content, :published => date, :link => nil, :title => nil)
+    @fake_feed_tools_feed = mock(:items => [], :link => nil, :title => nil)
     @fake_feed_tools_feed.stub!(:items).and_return([fake_item])
+    FeedTools::Feed.stub!(:open).and_return(@fake_feed_tools_feed)
   end
 
   describe "when feeds always return one new fake item" do
     before do
-      @fake_feed_tools_feed = mock(:items => [], :link => nil, :title => nil)
-      FeedTools::Feed.stub!(:open).and_return(@fake_feed_tools_feed)
-      @site = Site.create!
+      @site = create_site
       @site.feeds << Feed.create!
-    end
-
-    it "should find first entries after initial refresh" do
-      queue_in_rss("boo", Time.now)
-      @site.refresh_now
-      @site.newest_entries.length.should == 1
-      @site.newest_entries.first.content.should == "boo"
-    end
-
-    it "should find additional entries after new refresh" do
-      queue_in_rss("old", Time.now)
-      @site.refresh_now
-      queue_in_rss("new", Time.now + 1.year)
-      sleep 1
-      @site.refresh_now
-      @site.entries.length.should == 2
-      @site.newest_entries.length.should == 1
-      @site.newest_entries.first.content.should == "new"
     end
 
     it "shouldn't be ready before the actual refresh" do
@@ -118,23 +124,11 @@ describe Site do
     end
 
     it "should be ready after the refresh" do
+      queue_in_rss("bo", Time.now)
       @site.refresh_now
       @site.waiting_for_refresh.should be_false
     end
   end
-
-  it "should find new entries" do
-    refresh = Time.now
-    feed = Feed.create!
-    before = Entry.new(:created_at => refresh - 1.minute)
-    after = Entry.new(:created_at => refresh + 1.minute)
-    feed.entries << before << after
-    site = Site.create!(:last_refresh => refresh)
-    site.feeds << feed
-
-    site.newest_entries.should == [after]
-  end
-
 
   describe "with two feeds with interleaved entries" do
     before do
@@ -142,7 +136,7 @@ describe Site do
       @third_entry = Entry.new(:date => Date.parse("9/30/2009"))
       @second_entry = Entry.new(:date => Date.parse("9/29/2009"))
 
-      @site = Site.create!
+      @site = create_site
       @site.feeds << Feed.new
       @site.feeds << Feed.new
 

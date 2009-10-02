@@ -13,10 +13,13 @@ end
 class Site < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :entries, :through => :feeds
-  validates_uniqueness_of :slug, :message => "That url is taken"
+  validates_uniqueness_of :slug, :message => "^That url is taken"
+#  validates_format_of :slug, :with => /[A-Za-z0-9]/
 
-  def feed_list
-    
+
+  def after_create
+    self.feed_list = @feed_string if @feed_string
+    refresh
   end
 
   def entries_by_date
@@ -48,10 +51,6 @@ class Site < ActiveRecord::Base
     end
   end
 
-  def after_create
-    self.feed_list = @feed_string if @feed_string
-    refresh_now
-  end
 
   def stale
     last_refresh == nil or last_refresh < 1.hour.ago
@@ -77,12 +76,6 @@ class Site < ActiveRecord::Base
     feeds.each {|feed| feed.refresh}
     update_attributes(:waiting_for_refresh => false)
   end
-
-  def newest_entries
-    feeds.inject([]) do |newest,feed|
-      newest + feed.entries_created_after(last_refresh)
-    end
-  end 
 
   def refresh_and_queue_another
     refresh_now
