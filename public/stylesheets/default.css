@@ -102,6 +102,10 @@ input.url {
   border: 0;
 }
 
+.field_inner input, .center_form #feed_entry textarea {
+  outline: none;
+}
+
 .center_form textarea {
   width: 100%;
 }
@@ -139,6 +143,7 @@ input.url {
   border: 1px solid #CCC;
   background: url('/images/button_background.png');
   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   font-weight: bold;
   padding: 8px 20px;
   text-shadow: 1px 1px 1px #CCC;;
