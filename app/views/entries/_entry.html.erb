@@ -2,7 +2,7 @@
 <% unless entry.feed.service == :twitter %>
   <h3><a href="<%= entry.link %>"><%= entry.title %></a></h3>
 <% end %>
-<%= entry.content %>
+<%= entry.content if entry.content %>
 <div class="meta">
   <%= entry.date.to_human %>
   via <%= entry.feed.service_link %>

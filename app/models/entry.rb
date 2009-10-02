@@ -14,7 +14,9 @@ class Entry < ActiveRecord::Base
   end
 
   def close_tags
-    self.content = Hpricot(self.content, :fixup_tags => true).to_html
+    if self.content
+      self.content = Hpricot(self.content, :fixup_tags => true).to_html
+    end
   end
 
   def <=>(other)
