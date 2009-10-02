@@ -2,6 +2,8 @@
 
 <h1><%= @site.slug %></h1>
 
+<%= render :partial => "/warning" %>
+
 <%= render :partial => "entries/entry", :collection => @site.pages[@page-1] %>
 
 <div class="pages">

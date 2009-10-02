@@ -171,6 +171,25 @@ input.url {
 
 /* ENTRIES PAGE */
 
+#warning {
+  background-color: red;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  padding: 6px 12px;
+  color: white;
+  margin: 1em 0;
+  font-size: 1.3em;
+}
+
+#warning p {
+  margin: 0;
+}
+
+#warning .subtle {
+  margin-top: 1em;
+  font-size: 0.6em;
+}
+
 #new_stuff {
   display: inline;
 }
