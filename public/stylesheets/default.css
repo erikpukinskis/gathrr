@@ -187,15 +187,8 @@ input.url {
 }
 
 #site_status {
-  display: inline-block;
-  margin-left: 250px;
-  font-weight: normal;
-}
-
-#site_status.refreshing {
-  background-image: url('/images/spinner.gif');
-  background-repeat: no-repeat;
-  padding-left: 20px;
+  padding-top: 2em;
+  text-align: center;
 }
 
 .pages a {

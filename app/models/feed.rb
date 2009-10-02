@@ -30,7 +30,6 @@ class Feed < ActiveRecord::Base
     newest = newest_entry
 
     feed.items.each do |item|
-      debugger
       if !newest or item.published.utc > newest.date + 1.second
         entry = Entry.from_item(item).clean_content
         entries << entry

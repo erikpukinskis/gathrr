@@ -18,10 +18,10 @@ class Site < ActiveRecord::Base
   attr_accessor :feed_list
 
   def validate
+    feed_list = @feed_stringfe
     unless feeds.length > 0 or /[A-Za-z0-9]/.match(@feed_string) 
       errors.add(:feed_list, "^You need to enter at least one feed")
     end
-    feed_list = @feed_string
   end
 
   def after_create
@@ -35,6 +35,10 @@ class Site < ActiveRecord::Base
 
   def pages
     (entries_by_date.reverse / 15)
+  end
+
+  def feed_list
+    @feed_string
   end
 
   def feed_list=(feed_string)
