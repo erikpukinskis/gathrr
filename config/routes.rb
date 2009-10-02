@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect '', :controller => 'sites', :action => 'default'
 
-  map.resources :sites, :member => [ :newest_entries ], :only => [:show, :newest_entries]
+  map.resources :sites, :member => [ :newest_entries ], :only => [:show, :create, :newest_entries]
 
 #  map.connect '/sites/:id/page/:page', :controller => 'sites', :action => 'show'
   map.connect '/page/:page', :controller => 'sites', :action => 'show'
