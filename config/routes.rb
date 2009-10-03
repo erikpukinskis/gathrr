@@ -1,10 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.connect '', :controller => 'sites', :action => 'default'
+  map.resource :user_session
+  map.resource :account, :controller => "users"
+  map.resources :users
+
+  map.root :controller => 'sites', :action => 'default'
 
   map.resources :sites, :member => [ :newest_entries ]
 
   map.connect '/sites/:id/page/:page', :controller => 'sites', :action => 'show'
   map.connect '/page/:page', :controller => 'sites', :action => 'show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

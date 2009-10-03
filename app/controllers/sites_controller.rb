@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  before_filter :require_admin, :except => [:show, :new, :create, :default]
 
   def do_show
     @site = current_site ? current_site : Site.find(params[:id])
