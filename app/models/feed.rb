@@ -25,16 +25,20 @@ class Feed < ActiveRecord::Base
   end
 
   def refresh
-    feed = FeedTools::Feed.open(url)
-    update_attributes(:link => feed.link, :title => feed.title)
-    newest = newest_entry
+    begin
+      feed = FeedTools::Feed.open(url)
+      update_attributes(:link => feed.link, :title => feed.title)
+      newest = newest_entry
 
-    feed.items.each do |item|
-      if !newest or item.published.utc > newest.date + 1.second
-        entry = Entry.from_item(item).clean_content
-        entries << entry
-      end
-    end 
+      feed.items.each do |item|
+        if !newest or item.published.utc > newest.date + 1.second
+          entry = Entry.from_item(item).clean_content
+          entries << entry
+        end
+      end 
+    rescue
+
+    end
   end
 
   def newest_entry
