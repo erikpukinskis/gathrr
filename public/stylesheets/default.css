@@ -58,6 +58,25 @@ a:visited {
 
 /* SIGNUP FORM */
 
+#example {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#example a {
+  background-color: #444;
+  padding: 4px 8px 6px 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: white;
+}
+
+#example a:hover {
+  background: none;
+  background-color: #DDD;
+  color: #111;
+}
+
 #feed_examples {
   float: right;
   width: 180px;
