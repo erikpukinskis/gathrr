@@ -64,11 +64,11 @@ a:visited {
 }
 
 #example a {
-  background-color: #444;
+  background-color: lightblue;
   padding: 4px 8px 6px 8px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  color: white;
+  color: black;
 }
 
 #example a:hover {
