@@ -214,6 +214,7 @@ input.url {
   color: white;
   text-decoration: none;
   padding: 3px 8px;
+  line-height: 2em;
 }
 
 .entry .meta {
