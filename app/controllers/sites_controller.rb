@@ -6,7 +6,7 @@ class SitesController < ApplicationController
     @page = params[:page] ? params[:page].to_i : 1
 
     if @site.loaded?
-#      response.headers['Cache-Control'] = 'public, max-age=900' if RAILS_ENV == 'production'
+      response.headers['Cache-Control'] = 'public, max-age=900' if RAILS_ENV == 'production'
       respond_to do |format|
         format.html { render :action => "show" }
         format.xml  { render :xml => @site }
@@ -22,6 +22,7 @@ class SitesController < ApplicationController
     else
       @site = Site.new
 
+      response.headers['Cache-Control'] = 'public, max-age=86400' if RAILS_ENV == 'production'
       respond_to do |format|
         format.html { render :action => "new" }
         format.xml  { render :xml => @site }
