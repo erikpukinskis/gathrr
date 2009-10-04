@@ -22,7 +22,7 @@ class SitesController < ApplicationController
     else
       @site = Site.new
 
-      response.headers['Cache-Control'] = 'public, max-age=86400' if RAILS_ENV == 'production'
+      #response.headers['Cache-Control'] = 'public, max-age=86400' if RAILS_ENV == 'production'
       respond_to do |format|
         format.html { render :action => "new" }
         format.xml  { render :xml => @site }
