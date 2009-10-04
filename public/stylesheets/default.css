@@ -26,6 +26,17 @@ body {
   margin-right: auto;
 }
 
+#footer {
+  color: #ccc;
+  font-size: .8em;  
+  text-align: center;
+  margin-top: 2em;
+}
+
+#footer a {
+  color: #ccc;
+}
+
 h1 {
   font-size: 2.6em;
   text-align: center;
