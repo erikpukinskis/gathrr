@@ -1,0 +1,1 @@
+Bunchup is a public aggregator. You can use it to pull together a bunch of Twitter and RSS feeds onto a single page with it's own RSS feed.
